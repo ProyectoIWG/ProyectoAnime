@@ -37,11 +37,12 @@ class MyHomePageStatus extends State<MyHomePage> {
             hint: Text(_vista),
           ),
           TextField(
+            // donde se busca
             decoration: InputDecoration(
                 hintText: "Busca un anime", icon: Icon(Icons.search)),
             onSubmitted: (String str) async {
               setState(() {
-                id(str, _tipo).then((value) {
+                buscar(str, _tipo).then((value) {
                   result = value;
                 });
               });
@@ -84,9 +85,10 @@ class MyHomePageStatus extends State<MyHomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.search),
         onPressed: () async {
           print(result);
-          // Navigator.of(context).pushNamed('/animeS', arguments: result);
+          Navigator.of(context).pushNamed('/AnimeS', arguments: result);
         },
       ),
     );
