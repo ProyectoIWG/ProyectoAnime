@@ -1,3 +1,4 @@
+import 'package:ProyectoAnime/Screens/AnimeSearch.dart';
 import 'package:ProyectoAnime/Screens/MyHomePage.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +16,10 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: {
-        '/one': (context) => MyHomePage(),
+        '/Home': (context) => MyHomePage(),
+        '/AnimeS': (context) => AnimeSearch()
       },
-      initialRoute: '/one',
+      initialRoute: '/Home',
     );
   }
 }

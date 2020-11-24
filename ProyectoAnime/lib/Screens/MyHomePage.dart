@@ -7,9 +7,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageStatus extends State<MyHomePage> {
-  var busqueda;
-  var nombre;
-  int result;
+  var result;
   var _lista = ["Anime", "Manga", "Persona", "Personaje"];
   String _vista = "Seleccione una opción";
   var _tipo;
@@ -26,6 +24,7 @@ class MyHomePageStatus extends State<MyHomePage> {
       body: Column(
         children: <Widget>[
           DropdownButton(
+            // menu para elegir busqueda
             items: _lista
                 .map((String a) => DropdownMenuItem(value: a, child: Text(a)))
                 .toList(),
@@ -87,6 +86,7 @@ class MyHomePageStatus extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           print(result);
+          // Navigator.of(context).pushNamed('/animeS', arguments: result);
         },
       ),
     );

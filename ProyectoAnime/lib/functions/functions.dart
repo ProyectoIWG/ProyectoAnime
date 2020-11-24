@@ -8,9 +8,9 @@ Future<BuiltList<Search>> buscar(String str, var a) async {
   return busqueda;
 }
 
-Future<int> id(String str, var b) async {
+Future<BuiltList<Search>> id(String str, var b) async {
   var a = await buscar(str, b);
-  return a.first.malId;
+  return a;
 }
 
 tipo(String str) {
