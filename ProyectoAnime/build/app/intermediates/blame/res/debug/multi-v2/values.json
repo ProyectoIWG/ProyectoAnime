@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Proyecto_BuscaAnime\\Buscanime\\ProyectoAnime\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\ProyectoAnime\\ProyectoAnime\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\Proyecto_BuscaAnime\\Buscanime\\ProyectoAnime\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\ProyectoAnime\\ProyectoAnime\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
