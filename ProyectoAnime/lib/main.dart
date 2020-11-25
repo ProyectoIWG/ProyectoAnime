@@ -1,4 +1,5 @@
-import 'package:ProyectoAnime/Screens/AnimeSearch.dart';
+import 'package:ProyectoAnime/Screens/AnimangaSearch.dart';
+import 'package:ProyectoAnime/Screens/CharacterPersonSearch.dart';
 import 'package:ProyectoAnime/Screens/MyHomePage.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/Home': (context) => MyHomePage(),
-        '/AnimeS': (context) => AnimeSearch()
+        '/AnimangaS': (context) => AnimangaSearch(),
+        '/CharPerS': (context) => CharPerSearch(),
       },
       initialRoute: '/Home',
     );

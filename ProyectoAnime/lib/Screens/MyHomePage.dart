@@ -1,6 +1,8 @@
 import 'package:ProyectoAnime/functions/functions.dart';
 import 'package:flutter/material.dart';
 
+import '../jikan_api.dart';
+
 class MyHomePage extends StatefulWidget {
   @override
   MyHomePageStatus createState() => MyHomePageStatus();
@@ -87,8 +89,30 @@ class MyHomePageStatus extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.search),
         onPressed: () async {
-          print(result);
-          Navigator.of(context).pushNamed('/AnimeS', arguments: result);
+          switch (_tipo) {
+            case SearchType.anime:
+              {
+                Navigator.of(context)
+                    .pushNamed('/AnimangaS', arguments: result);
+              }
+              break;
+            case SearchType.manga:
+              {
+                Navigator.of(context)
+                    .pushNamed('/AnimangaS', arguments: result);
+              }
+              break;
+            case SearchType.character:
+              {
+                Navigator.of(context).pushNamed('/CharPerS', arguments: result);
+              }
+              break;
+            case SearchType.person:
+              {
+                Navigator.of(context).pushNamed('/CharPerS', arguments: result);
+              }
+              break;
+          }
         },
       ),
     );
