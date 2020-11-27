@@ -1,15 +1,15 @@
 import 'package:ProyectoAnime/functions/functions.dart';
 import 'package:flutter/material.dart';
 
+import '../jikan_api.dart';
+
 class MyHomePage extends StatefulWidget {
   @override
   MyHomePageStatus createState() => MyHomePageStatus();
 }
 
 class MyHomePageStatus extends State<MyHomePage> {
-  var busqueda;
-  var nombre;
-  int result;
+  var result;
   var _lista = ["Anime", "Manga", "Persona", "Personaje"];
   String _vista = "Seleccione una opción";
   var _tipo;
@@ -26,6 +26,7 @@ class MyHomePageStatus extends State<MyHomePage> {
       body: Column(
         children: <Widget>[
           DropdownButton(
+            // menu para elegir busqueda
             items: _lista
                 .map((String a) => DropdownMenuItem(value: a, child: Text(a)))
                 .toList(),
@@ -38,11 +39,12 @@ class MyHomePageStatus extends State<MyHomePage> {
             hint: Text(_vista),
           ),
           TextField(
+            // donde se busca
             decoration: InputDecoration(
                 hintText: "Busca un anime", icon: Icon(Icons.search)),
             onSubmitted: (String str) async {
               setState(() {
-                id(str, _tipo).then((value) {
+                buscar(str, _tipo).then((value) {
                   result = value;
                 });
               });
@@ -85,8 +87,32 @@ class MyHomePageStatus extends State<MyHomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.search),
         onPressed: () async {
-          print(result);
+          switch (_tipo) {
+            case SearchType.anime:
+              {
+                Navigator.of(context)
+                    .pushNamed('/AnimangaS', arguments: result);
+              }
+              break;
+            case SearchType.manga:
+              {
+                Navigator.of(context)
+                    .pushNamed('/AnimangaS', arguments: result);
+              }
+              break;
+            case SearchType.character:
+              {
+                Navigator.of(context).pushNamed('/CharPerS', arguments: result);
+              }
+              break;
+            case SearchType.person:
+              {
+                Navigator.of(context).pushNamed('/CharPerS', arguments: result);
+              }
+              break;
+          }
         },
       ),
     );

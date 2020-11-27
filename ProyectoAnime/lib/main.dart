@@ -1,3 +1,5 @@
+import 'package:ProyectoAnime/Screens/AnimangaSearch.dart';
+import 'package:ProyectoAnime/Screens/CharacterPersonSearch.dart';
 import 'package:ProyectoAnime/Screens/MyHomePage.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +17,11 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: {
-        '/one': (context) => MyHomePage(),
+        '/Home': (context) => MyHomePage(),
+        '/AnimangaS': (context) => AnimangaSearch(),
+        '/CharPerS': (context) => CharPerSearch(),
       },
-      initialRoute: '/one',
+      initialRoute: '/Home',
     );
   }
 }
