@@ -1,4 +1,4 @@
-#Wed Nov 25 12:55:06 CLST 2020
+#Mon Nov 30 20:11:51 CLST 2020
 base.0=D\:\\ProyectoAnime\\ProyectoAnime\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

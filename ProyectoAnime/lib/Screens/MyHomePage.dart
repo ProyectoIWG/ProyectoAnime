@@ -1,3 +1,5 @@
+import 'package:ProyectoAnime/Tabs/AnimeTop.dart';
+import 'package:ProyectoAnime/Tabs/MangaTop.dart';
 import 'package:ProyectoAnime/functions/functions.dart';
 import 'package:flutter/material.dart';
 
@@ -8,11 +10,26 @@ class MyHomePage extends StatefulWidget {
   MyHomePageStatus createState() => MyHomePageStatus();
 }
 
-class MyHomePageStatus extends State<MyHomePage> {
+class MyHomePageStatus extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
   var result;
   var _lista = ["Anime", "Manga", "Persona", "Personaje"];
   String _vista = "Seleccione una opción";
   var _tipo;
+  TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,30 +77,50 @@ class MyHomePageStatus extends State<MyHomePage> {
               ),
             ),
           ),
-          DefaultTabController(
-              length: 2,
-              child: TabBar(
-                tabs: [
-                  Tab(
-                    child: Text(
-                      "Anime",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                      ),
-                    ),
+          TabBar(
+            controller: _tabController,
+            tabs: [
+              Tab(
+                child: Text(
+                  "Anime",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20.0,
                   ),
-                  Tab(
-                    child: Text(
-                      "Manga",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                      ),
-                    ),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  "Manga",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20.0,
                   ),
-                ],
-              )),
+                ),
+              ),
+            ],
+          ),
+          TabBarView(
+            controller: _tabController,
+            children: <Widget>[
+              Container(
+                child: Center(
+                  child: Text(
+                    'Top 10 animes',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                ),
+              ),
+              Container(
+                child: Center(
+                  child: Text(
+                    'Top 10 mangas',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
