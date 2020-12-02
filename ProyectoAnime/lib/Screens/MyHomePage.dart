@@ -66,7 +66,10 @@ class MyHomePageStatus extends State<MyHomePage>
                 _tipo = tipo(_value);
               });
             },
-            hint: Text(_vista),
+            hint: Text(
+              _vista,
+              style: TextStyle(color: Colors.black87),
+            ),
           ),
           TextField(
             // donde se busca
