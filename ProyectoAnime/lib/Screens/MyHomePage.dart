@@ -8,11 +8,13 @@ class MyHomePage extends StatefulWidget {
   MyHomePageStatus createState() => MyHomePageStatus();
 }
 
-class MyHomePageStatus extends State<MyHomePage> {
+class MyHomePageStatus extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
   var result;
   var _lista = ["Anime", "Manga", "Persona", "Personaje"];
   String _vista = "Seleccione una opción";
   var _tipo;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +23,34 @@ class MyHomePageStatus extends State<MyHomePage> {
         title: Image.asset(
           "assets/iconologo.png",
           height: 50,
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: Colors.black),
+              accountName:
+                  Text('Creado por \n Adolo Espinosa, Nicolas Bello y Darwin'),
+              accountEmail: null,
+              currentAccountPicture: Image.asset(
+                'assets/Saber.png',
+              ),
+            ),
+            ListTile(
+              title: Text('Top 10 Animes'),
+              onTap: () {
+                Navigator.of(context).pushNamed('/AnimeTop');
+              },
+            ),
+            ListTile(
+              title: Text('Top 10 Mangas'),
+              onTap: () {
+                Navigator.of(context).pushNamed('/MangaTop');
+              },
+            ),
+          ],
         ),
       ),
       body: Column(
@@ -36,7 +66,10 @@ class MyHomePageStatus extends State<MyHomePage> {
                 _tipo = tipo(_value);
               });
             },
-            hint: Text(_vista),
+            hint: Text(
+              _vista,
+              style: TextStyle(color: Colors.black87),
+            ),
           ),
           TextField(
             // donde se busca
@@ -50,69 +83,42 @@ class MyHomePageStatus extends State<MyHomePage> {
               });
             },
           ),
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Text(
-              "Top 10 Mejores",
-              style: TextStyle(
-                color: Colors.red,
-                fontSize: 20.0,
-              ),
-            ),
-          ),
-          DefaultTabController(
-              length: 2,
-              child: TabBar(
-                tabs: [
-                  Tab(
-                    child: Text(
-                      "Anime",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                      ),
-                    ),
-                  ),
-                  Tab(
-                    child: Text(
-                      "Manga",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                      ),
-                    ),
-                  ),
-                ],
-              )),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.search),
         onPressed: () async {
-          switch (_tipo) {
-            case SearchType.anime:
-              {
-                Navigator.of(context)
-                    .pushNamed('/AnimangaS', arguments: result);
+          Future.delayed(
+            Duration(seconds: 1, milliseconds: 5),
+            () {
+              switch (_tipo) {
+                case SearchType.anime:
+                  {
+                    Navigator.of(context)
+                        .pushNamed('/AnimangaS', arguments: result);
+                  }
+                  break;
+                case SearchType.manga:
+                  {
+                    Navigator.of(context)
+                        .pushNamed('/AnimangaS', arguments: result);
+                  }
+                  break;
+                case SearchType.character:
+                  {
+                    Navigator.of(context)
+                        .pushNamed('/CharPerS', arguments: result);
+                  }
+                  break;
+                case SearchType.person:
+                  {
+                    Navigator.of(context)
+                        .pushNamed('/CharPerS', arguments: result);
+                  }
+                  break;
               }
-              break;
-            case SearchType.manga:
-              {
-                Navigator.of(context)
-                    .pushNamed('/AnimangaS', arguments: result);
-              }
-              break;
-            case SearchType.character:
-              {
-                Navigator.of(context).pushNamed('/CharPerS', arguments: result);
-              }
-              break;
-            case SearchType.person:
-              {
-                Navigator.of(context).pushNamed('/CharPerS', arguments: result);
-              }
-              break;
-          }
+            },
+          );
         },
       ),
     );

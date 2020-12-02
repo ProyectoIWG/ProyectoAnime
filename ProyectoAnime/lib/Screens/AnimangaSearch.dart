@@ -46,6 +46,7 @@ class _AnimangaSearchState extends State<AnimangaSearch> {
                           width: 50,
                         ),
                         title: Text(_search[position].title),
+                        onTap: () {},
                       ),
                     ),
                   );

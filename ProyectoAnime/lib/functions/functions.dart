@@ -13,6 +13,12 @@ Future<BuiltList<Search>> id(String str, var b) async {
   return a;
 }
 
+Future<BuiltList<Top>> top10(var tipo) async {
+  var jikan = Jikan();
+  var a = await jikan.getTop(tipo);
+  return a;
+}
+
 tipo(String str) {
   var a;
   if (str == "Anime") {

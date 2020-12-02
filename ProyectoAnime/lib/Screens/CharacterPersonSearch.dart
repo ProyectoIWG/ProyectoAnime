@@ -46,6 +46,7 @@ class _CharPerSearchState extends State<CharPerSearch> {
                           width: 50,
                         ),
                         title: Text(_search[position].name),
+                        onTap: () {},
                       ),
                     ),
                   );
