@@ -1,7 +1,8 @@
+import 'package:ProyectoAnime/Widgets/AnimeSeason.dart';
+import 'package:ProyectoAnime/Widgets/BotonBusqueda.dart';
+import 'package:ProyectoAnime/Widgets/MenuLateral.dart';
 import 'package:ProyectoAnime/functions/functions.dart';
 import 'package:flutter/material.dart';
-
-import '../jikan_api.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class MyHomePageStatus extends State<MyHomePage>
   var _lista = ["Anime", "Manga", "Persona", "Personaje"];
   String _vista = "Seleccione una opción";
   var _tipo;
+  DateTime _fecha = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -25,34 +27,7 @@ class MyHomePageStatus extends State<MyHomePage>
           height: 50,
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: Colors.black),
-              accountName:
-                  Text('Creado por \n Adolo Espinosa, Nicolas Bello y Darwin'),
-              accountEmail: null,
-              currentAccountPicture: Image.asset(
-                'assets/Saber.png',
-              ),
-            ),
-            ListTile(
-              title: Text('Top 10 Animes'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/AnimeTop');
-              },
-            ),
-            ListTile(
-              title: Text('Top 10 Mangas'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/MangaTop');
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: MenuLateral(),
       body: Column(
         children: <Widget>[
           DropdownButton(
@@ -83,44 +58,10 @@ class MyHomePageStatus extends State<MyHomePage>
               });
             },
           ),
+          AnimeSeason(fecha: _fecha),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.search),
-        onPressed: () async {
-          Future.delayed(
-            Duration(seconds: 1, milliseconds: 5),
-            () {
-              switch (_tipo) {
-                case SearchType.anime:
-                  {
-                    Navigator.of(context)
-                        .pushNamed('/AnimangaS', arguments: result);
-                  }
-                  break;
-                case SearchType.manga:
-                  {
-                    Navigator.of(context)
-                        .pushNamed('/AnimangaS', arguments: result);
-                  }
-                  break;
-                case SearchType.character:
-                  {
-                    Navigator.of(context)
-                        .pushNamed('/CharPerS', arguments: result);
-                  }
-                  break;
-                case SearchType.person:
-                  {
-                    Navigator.of(context)
-                        .pushNamed('/CharPerS', arguments: result);
-                  }
-                  break;
-              }
-            },
-          );
-        },
-      ),
+      floatingActionButton: BotonBusqueda(tipo: _tipo, result: result),
     );
   }
 }
