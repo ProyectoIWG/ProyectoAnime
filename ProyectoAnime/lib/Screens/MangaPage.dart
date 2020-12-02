@@ -12,8 +12,30 @@ class MangaPageStatus extends State<MangaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.black,
-            title: Image.asset("assets/iconologo.png", height: 50)));
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Image.asset("assets/iconologo.png", height: 50),
+      ),
+    );
   }
+}
+
+Widget build(BuildContext context) {
+  return Column(
+    children: <Widget>[
+      Container(
+        margin: EdgeInsets.symmetric(
+          vertical: 25.0,
+        ),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(
+              color: Colors.black,
+              width: 2.5,
+            )),
+        height: 45,
+        child: Text("hola"),
+      )
+    ],
+  );
 }
