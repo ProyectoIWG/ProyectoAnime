@@ -3,8 +3,8 @@ import 'package:ProyectoAnime/Screens/CharacterPersonSearch.dart';
 import 'package:ProyectoAnime/Screens/MyHomePage.dart';
 import 'package:flutter/material.dart';
 
-import 'Tabs/AnimeTop.dart';
-import 'Tabs/MangaTop.dart';
+import 'Screens/AnimeTop.dart';
+import 'Screens/MangaTop.dart';
 
 void main() {
   runApp(MyApp());
