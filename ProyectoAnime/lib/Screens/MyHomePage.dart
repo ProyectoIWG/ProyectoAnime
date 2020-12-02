@@ -85,30 +85,37 @@ class MyHomePageStatus extends State<MyHomePage>
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.search),
         onPressed: () async {
-          switch (_tipo) {
-            case SearchType.anime:
-              {
-                Navigator.of(context)
-                    .pushNamed('/AnimangaS', arguments: result);
+          Future.delayed(
+            Duration(seconds: 1, milliseconds: 5),
+            () {
+              switch (_tipo) {
+                case SearchType.anime:
+                  {
+                    Navigator.of(context)
+                        .pushNamed('/AnimangaS', arguments: result);
+                  }
+                  break;
+                case SearchType.manga:
+                  {
+                    Navigator.of(context)
+                        .pushNamed('/AnimangaS', arguments: result);
+                  }
+                  break;
+                case SearchType.character:
+                  {
+                    Navigator.of(context)
+                        .pushNamed('/CharPerS', arguments: result);
+                  }
+                  break;
+                case SearchType.person:
+                  {
+                    Navigator.of(context)
+                        .pushNamed('/CharPerS', arguments: result);
+                  }
+                  break;
               }
-              break;
-            case SearchType.manga:
-              {
-                Navigator.of(context)
-                    .pushNamed('/AnimangaS', arguments: result);
-              }
-              break;
-            case SearchType.character:
-              {
-                Navigator.of(context).pushNamed('/CharPerS', arguments: result);
-              }
-              break;
-            case SearchType.person:
-              {
-                Navigator.of(context).pushNamed('/CharPerS', arguments: result);
-              }
-              break;
-          }
+            },
+          );
         },
       ),
     );
