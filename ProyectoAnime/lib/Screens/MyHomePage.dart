@@ -1,5 +1,3 @@
-import 'package:ProyectoAnime/Tabs/AnimeTop.dart';
-import 'package:ProyectoAnime/Tabs/MangaTop.dart';
 import 'package:ProyectoAnime/functions/functions.dart';
 import 'package:flutter/material.dart';
 
@@ -16,19 +14,6 @@ class MyHomePageStatus extends State<MyHomePage>
   var _lista = ["Anime", "Manga", "Persona", "Personaje"];
   String _vista = "Seleccione una opción";
   var _tipo;
-  TabController _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 2, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +23,34 @@ class MyHomePageStatus extends State<MyHomePage>
         title: Image.asset(
           "assets/iconologo.png",
           height: 50,
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: Colors.black),
+              accountName:
+                  Text('Creado por \n Adolo Espinosa, Nicolas Bello y Darwin'),
+              accountEmail: null,
+              currentAccountPicture: Image.asset(
+                'assets/Saber.png',
+              ),
+            ),
+            ListTile(
+              title: Text('Top 10 Animes'),
+              onTap: () {
+                Navigator.of(context).pushNamed('/AnimeTop');
+              },
+            ),
+            ListTile(
+              title: Text('Top 10 Mangas'),
+              onTap: () {
+                Navigator.of(context).pushNamed('/MangaTop');
+              },
+            ),
+          ],
         ),
       ),
       body: Column(
@@ -66,60 +79,6 @@ class MyHomePageStatus extends State<MyHomePage>
                 });
               });
             },
-          ),
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Text(
-              "Top 10 Mejores",
-              style: TextStyle(
-                color: Colors.red,
-                fontSize: 20.0,
-              ),
-            ),
-          ),
-          TabBar(
-            controller: _tabController,
-            tabs: [
-              Tab(
-                child: Text(
-                  "Anime",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-              Tab(
-                child: Text(
-                  "Manga",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          TabBarView(
-            controller: _tabController,
-            children: <Widget>[
-              Container(
-                child: Center(
-                  child: Text(
-                    'Top 10 animes',
-                    style: TextStyle(fontSize: 25),
-                  ),
-                ),
-              ),
-              Container(
-                child: Center(
-                  child: Text(
-                    'Top 10 mangas',
-                    style: TextStyle(fontSize: 25),
-                  ),
-                ),
-              ),
-            ],
           ),
         ],
       ),

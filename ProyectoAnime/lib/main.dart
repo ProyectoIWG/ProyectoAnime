@@ -3,6 +3,9 @@ import 'package:ProyectoAnime/Screens/CharacterPersonSearch.dart';
 import 'package:ProyectoAnime/Screens/MyHomePage.dart';
 import 'package:flutter/material.dart';
 
+import 'Tabs/AnimeTop.dart';
+import 'Tabs/MangaTop.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -20,6 +23,8 @@ class MyApp extends StatelessWidget {
         '/Home': (context) => MyHomePage(),
         '/AnimangaS': (context) => AnimangaSearch(),
         '/CharPerS': (context) => CharPerSearch(),
+        '/AnimeTop': (context) => GetAnimeTop(),
+        '/MangaTop': (context) => GetMangaTop(),
       },
       initialRoute: '/Home',
     );

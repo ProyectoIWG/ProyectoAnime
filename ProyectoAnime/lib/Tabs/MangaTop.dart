@@ -3,12 +3,16 @@ import 'package:flutter/material.dart';
 class GetMangaTop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          'Top 10 mangas',
-          style: TextStyle(fontSize: 25),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Image.asset(
+          "assets/iconologo.png",
+          height: 50,
         ),
+      ),
+      body: Center(
+        child: Text('Manga Top 10'),
       ),
     );
   }
