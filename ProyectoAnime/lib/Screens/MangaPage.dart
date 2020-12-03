@@ -24,6 +24,7 @@ Widget build(BuildContext context) {
   return Column(
     children: <Widget>[
       Container(
+        alignment: Alignment.center,
         margin: EdgeInsets.symmetric(
           vertical: 25.0,
         ),
