@@ -18,11 +18,19 @@ class AnimeSeason extends StatelessWidget {
       future: animeSeason(_fecha),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator();
+          return Padding(
+            padding: const EdgeInsets.all(160.0),
+            child: Center(
+              child: CircularProgressIndicator(
+                strokeWidth: 6.0,
+                backgroundColor: Colors.grey,
+              ),
+            ),
+          );
         } else {
           Season _season = snapshot.data;
           return Container(
-            height: 550,
+            height: 650,
             child: ListView.builder(
               itemCount: 70,
               scrollDirection: Axis.vertical,
@@ -37,7 +45,9 @@ class AnimeSeason extends StatelessWidget {
                     child: ListTile(
                       leading: Image.network(_season.anime[position].imageUrl),
                       title: Text(_season.anime[position].title),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushNamed('/AnimePage');
+                      },
                     ),
                   ),
                 );
