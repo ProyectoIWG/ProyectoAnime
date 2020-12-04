@@ -1,42 +1,27 @@
-import 'package:ProyectoAnime/jikan_api.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
+import 'package:ProyectoAnime/Widgets/Informaciongeneral.dart';
+import 'package:ProyectoAnime/Widgets/PartesuperiorPagAnime.dart';
+import 'package:ProyectoAnime/Widgets/Sinopsis.dart';
+import 'package:ProyectoAnime/widgets/ParteSuperiorManga.dart';
 import 'package:flutter/material.dart';
 
-class MangaPage extends StatefulWidget {
-  @override
-  MangaPageStatus createState() => MangaPageStatus();
-}
-
-class MangaPageStatus extends State<MangaPage> {
+class AnimePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Image.asset("assets/iconologo.png", height: 50),
+        title: Image.asset(
+          "assets/iconologo.png",
+          height: 50,
+        ),
+      ),
+      body: Column(
+        children: <Widget>[
+          ParteSuperiorManga(),
+          Sinopsis(),
+          Informaciongeneral(),
+        ],
       ),
     );
   }
-}
-
-Widget build(BuildContext context) {
-  return Column(
-    children: <Widget>[
-      Container(
-        alignment: Alignment.center,
-        margin: EdgeInsets.symmetric(
-          vertical: 25.0,
-        ),
-        decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(
-              color: Colors.black,
-              width: 2.5,
-            )),
-        height: 45,
-        child: Text("hola"),
-      )
-    ],
-  );
 }
