@@ -31,7 +31,7 @@ class Sinopsis extends StatelessWidget {
           ),
           child: ListTile(
             title: Text(
-              'Kaguya Shinomiya y Miyuki Shirogane son dos chicos prodigio que controlan el consejo de estudiantes de su prestigiosa academia, lo que las convierte en la crème de la crème de la élite. Ambos serían la pareja perfecta, si no fuera por su orgullo y narcisismo.',
+              'Hombre joven roto + demonio perro motosierra = Hombre motosierra! ¡El nombre lo dice todo! ¡La vida de pobreza de Denji cambia para siempre cuando se fusiona con su perro mascota, Pochita! Ahora vive en la gran ciudad y es un Devil Hunter oficial. ¡Pero tiene mucho que aprender sobre su nuevo trabajo y los poderes de la motosierra!.',
               style: TextStyle(
                 fontSize: 15.0,
                 fontFamily: 'Dosis',

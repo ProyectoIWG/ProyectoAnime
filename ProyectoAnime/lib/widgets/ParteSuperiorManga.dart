@@ -34,7 +34,7 @@ class ParteSuperiorManga extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "->Chainsawman<-",
+                    "->Chainsaw man<-",
                     style: TextStyle(
                       fontSize: 12.0,
                     ),
