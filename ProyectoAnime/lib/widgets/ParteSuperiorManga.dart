@@ -34,7 +34,7 @@ class ParteSuperiorManga extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "->Kaguya sama: Love is war<-",
+                    "->Chainsawman<-",
                     style: TextStyle(
                       fontSize: 12.0,
                     ),
@@ -70,7 +70,7 @@ class ParteSuperiorManga extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "->Aka Akasaka<-",
+                    "->Tatsuki Fujimito<-",
                     style: TextStyle(
                       fontSize: 12.0,
                     ),
@@ -93,7 +93,7 @@ class ParteSuperiorManga extends StatelessWidget {
             child: Align(
               alignment: Alignment.center,
               child: Image.asset(
-                "assets/Kaguya.jpg",
+                "assets/chainsaw.png",
                 width: 90,
                 height: 150,
               ),
@@ -120,7 +120,7 @@ class ParteSuperiorManga extends StatelessWidget {
                 ),
                 Align(
                   alignment: Alignment.center,
-                  child: Text("->12<-"),
+                  child: Text("->95<-"),
                 ),
               ],
             ),
@@ -173,7 +173,7 @@ class ParteSuperiorManga extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "->Comedia Romantica<-",
+                    "->Comedia Accion<-",
                     style: TextStyle(
                       fontSize: 12.0,
                     ),
@@ -182,7 +182,7 @@ class ParteSuperiorManga extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "->Drama<-",
+                    "->Horror<-",
                     style: TextStyle(
                       fontSize: 12.0,
                     ),
@@ -191,7 +191,7 @@ class ParteSuperiorManga extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "->Escolar<-",
+                    "->Sobrenatural<-",
                     style: TextStyle(
                       fontSize: 12.0,
                     ),
