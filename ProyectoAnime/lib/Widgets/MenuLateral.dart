@@ -14,8 +14,8 @@ class MenuLateral extends StatelessWidget {
         children: <Widget>[
           UserAccountsDrawerHeader(
             decoration: BoxDecoration(color: Colors.black),
-            accountName:
-                Text('Creado por \n Adolo Espinosa, Nicolas Bello y Darwin'),
+            accountName: Text(
+                'Creado por \nAdolo Espinosa, Nicolas Bello y \nDarwin Gutiérrez'),
             accountEmail: null,
             currentAccountPicture: Image.asset(
               'assets/Saber.png',

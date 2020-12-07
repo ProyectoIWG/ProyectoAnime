@@ -17,6 +17,8 @@ class Informaciongeneral extends StatelessWidget {
                 color: Colors.black,
                 width: 2.5,
               )),
+
+          height: 45,
           width: 200,
           child: Column(
             children: <Widget>[
