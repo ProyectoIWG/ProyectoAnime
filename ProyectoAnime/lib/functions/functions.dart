@@ -53,3 +53,23 @@ tipo(String str) {
     return a;
   }
 }
+
+Future<Anime> animeData(int malId) async {
+  var jikan = Jikan();
+  var a = jikan.getAnimeInfo(malId);
+  return a;
+}
+
+Future<CharacterStaff> animeStaff(int malId) async {
+  var jikan = Jikan();
+  var a = jikan.getAnimeCharactersStaff(malId);
+  return a;
+}
+
+getDirector(CharacterStaff data) {
+  for (var i in data.staff) {
+    if (i.positions.first == 'Director') {
+      return i.name;
+    }
+  }
+}

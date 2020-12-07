@@ -4,24 +4,31 @@ import 'package:ProyectoAnime/Widgets/Personajes.dart';
 import 'package:ProyectoAnime/Widgets/Sinopsis.dart';
 import 'package:flutter/material.dart';
 
-class AnimePage extends StatelessWidget {
+class AnimePage extends StatefulWidget {
   @override
-  Widget build(BuildContext context){
-    return Scaffold(appBar: AppBar(
+  _AnimePageState createState() => _AnimePageState();
+}
+
+class _AnimePageState extends State<AnimePage> {
+  @override
+  Widget build(BuildContext context) {
+    int malId = ModalRoute.of(context).settings.arguments;
+    return Scaffold(
+      appBar: AppBar(
         backgroundColor: Colors.black,
         title: Image.asset(
           "assets/iconologo.png",
-           height: 50,
-           ),
+          height: 50,
+        ),
       ),
       body: Column(
         children: <Widget>[
-          PartesuperiorPagAnime(),
-          Sinopsis(),
-          Informaciongeneral(),
-          Personajes(),
+          PartesuperiorPagAnime(malId),
+          Sinopsis(malId),
+          Informaciongeneral(malId),
+          Personajes(malId),
         ],
       ),
-      );
+    );
   }
 }
