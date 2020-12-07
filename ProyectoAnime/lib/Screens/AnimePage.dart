@@ -1,5 +1,6 @@
 import 'package:ProyectoAnime/Widgets/Informaciongeneral.dart';
 import 'package:ProyectoAnime/Widgets/PartesuperiorPagAnime.dart';
+import 'package:ProyectoAnime/Widgets/Personajes.dart';
 import 'package:ProyectoAnime/Widgets/Sinopsis.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,7 @@ class AnimePage extends StatelessWidget {
           PartesuperiorPagAnime(),
           Sinopsis(),
           Informaciongeneral(),
+          Personajes(),
         ],
       ),
       );
