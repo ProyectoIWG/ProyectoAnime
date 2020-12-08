@@ -28,6 +28,24 @@ class MenuLateral extends StatelessWidget {
             },
           ),
           ListTile(
+            title: Text('Top 10 Animes Populares'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/AnimePopu');
+            },
+          ),
+          ListTile(
+            title: Text('Top 10 Animes en Emisión'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/AnimeAiring');
+            },
+          ),
+          ListTile(
+            title: Text('Top 10 Peliculas Anime'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/AnimeMovie');
+            },
+          ),
+          ListTile(
             title: Text('Top 10 Mangas'),
             onTap: () {
               Navigator.of(context).pushNamed('/MangaTop');
