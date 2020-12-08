@@ -19,6 +19,24 @@ Future<BuiltList<Top>> top10(var tipo) async {
   return a;
 }
 
+Future<BuiltList<Top>> topPopu(var tipo) async {
+  var jikan = Jikan();
+  var a = await jikan.getTop(tipo, subtype: TopSubtype.bypopularity);
+  return a;
+}
+
+Future<BuiltList<Top>> topAiring(var tipo) async {
+  var jikan = Jikan();
+  var a = await jikan.getTop(tipo, subtype: TopSubtype.airing);
+  return a;
+}
+
+Future<BuiltList<Top>> topMovies(var tipo) async {
+  var jikan = Jikan();
+  var a = await jikan.getTop(tipo, subtype: TopSubtype.movie);
+  return a;
+}
+
 getSeason(DateTime mes) {
   if (mes.month == 1 || mes.month == 2 || mes.month == 3) {
     return SeasonType.winter;
@@ -51,5 +69,72 @@ tipo(String str) {
   } else {
     a = SearchType.character;
     return a;
+  }
+}
+
+Future<Anime> animeData(int malId) async {
+  var jikan = Jikan();
+  var a = jikan.getAnimeInfo(malId);
+  return a;
+}
+
+Future<CharacterStaff> animeStaff(int malId) async {
+  var jikan = Jikan();
+  var a = jikan.getAnimeCharactersStaff(malId);
+  return a;
+}
+
+getDirector(CharacterStaff data) {
+  for (var i in data.staff) {
+    for (var e in i.positions) {
+      if (e == 'Director') {
+        return i.name;
+      }
+    }
+  }
+  return '?';
+}
+
+Future<BuiltList<Promo>> getVideos(int malId) {
+  var jikan = Jikan();
+  var a = jikan.getAnimeVideos(malId);
+  return a;
+}
+
+Future<CharacterStaff> getStaff(int malId) {
+  var jikan = Jikan();
+  var a = jikan.getAnimeCharactersStaff(malId);
+  return a;
+}
+
+verificarImagen1(String str) {
+  if (str == null) {
+    return 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6169b41c-74fe-4235-9815-1e8d4dc87406/d3hgxl4-a6d413df-c24f-4077-b1d2-8765659ef170.png/v1/fill/w_900,h_800,strp/png_fondo_blanco_by_camilhitha124_d3hgxl4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD04MDAiLCJwYXRoIjoiXC9mXC82MTY5YjQxYy03NGZlLTQyMzUtOTgxNS0xZThkNGRjODc0MDZcL2QzaGd4bDQtYTZkNDEzZGYtYzI0Zi00MDc3LWIxZDItODc2NTY1OWVmMTcwLnBuZyIsIndpZHRoIjoiPD05MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.ZwoW6wOVYsacJ1ORGubUbgFGNpuBOXcOAme5iDko2sM';
+  } else {
+    return str;
+  }
+}
+
+verificarImagen2(BuiltList<VoiceActor> data) {
+  if (data.isEmpty) {
+    return 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6169b41c-74fe-4235-9815-1e8d4dc87406/d3hgxl4-a6d413df-c24f-4077-b1d2-8765659ef170.png/v1/fill/w_900,h_800,strp/png_fondo_blanco_by_camilhitha124_d3hgxl4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD04MDAiLCJwYXRoIjoiXC9mXC82MTY5YjQxYy03NGZlLTQyMzUtOTgxNS0xZThkNGRjODc0MDZcL2QzaGd4bDQtYTZkNDEzZGYtYzI0Zi00MDc3LWIxZDItODc2NTY1OWVmMTcwLnBuZyIsIndpZHRoIjoiPD05MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.ZwoW6wOVYsacJ1ORGubUbgFGNpuBOXcOAme5iDko2sM';
+  } else {
+    for (var i in data) {
+      if (i.language == 'Japanese') {
+        return i.imageUrl;
+      }
+    }
+  }
+}
+
+verificarNombre(BuiltList<VoiceActor> data) {
+  if (data.isEmpty) {
+    return '';
+  } else {
+    for (var i in data) {
+      if (i.language == 'Japanese') {
+        return i.name;
+      }
+    }
   }
 }

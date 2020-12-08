@@ -1,10 +1,9 @@
 import 'package:ProyectoAnime/functions/functions.dart';
+import 'package:ProyectoAnime/jikan_api.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:flutter/material.dart';
 
-import '../jikan_api.dart';
-
-class GetMangaTop extends StatelessWidget {
+class GetAnimeAiring extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,20 +20,21 @@ class GetMangaTop extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'Top 10 Mangas mejores calificados',
+                'Top 10 animes en emisión',
                 style: TextStyle(fontSize: 20),
               ),
             ),
             Container(
-              height: 610,
+              height: 615,
               child: FutureBuilder(
-                future: top10(TopType.manga),
+                future: topAiring(TopType.anime),
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return Center(child: CircularProgressIndicator());
                   } else {
                     BuiltList<Top> top = snapshot.data;
                     return ListView.builder(
+                      shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       itemCount: 10,
                       itemBuilder: (context, position) {
@@ -54,7 +54,10 @@ class GetMangaTop extends StatelessWidget {
                                 style: TextStyle(fontSize: 20),
                               ),
                               subtitle: Text(top[position].score.toString()),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.of(context).pushNamed('/AnimePage',
+                                    arguments: top[position].malId);
+                              },
                             ),
                           ),
                         );

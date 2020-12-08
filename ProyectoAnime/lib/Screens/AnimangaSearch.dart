@@ -61,7 +61,8 @@ class _AnimangaSearchState extends State<AnimangaSearch> {
                             title: Text(animedata[position].title),
                             onTap: () {
                               if (_tipo == SearchType.anime) {
-                                Navigator.of(context).pushNamed('/AnimePage');
+                                Navigator.of(context).pushNamed('/AnimePage',
+                                    arguments: animedata[position].malId);
                               }
                             },
                           ),

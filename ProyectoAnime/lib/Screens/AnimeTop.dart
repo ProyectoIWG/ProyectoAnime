@@ -19,10 +19,13 @@ class GetAnimeTop extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text('Top 10 animes mejores calificados'),
+              child: Text(
+                'Top 10 animes mejores calificados',
+                style: TextStyle(fontSize: 20),
+              ),
             ),
             Container(
-              height: 625,
+              height: 615,
               child: FutureBuilder(
                 future: top10(TopType.anime),
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -31,6 +34,7 @@ class GetAnimeTop extends StatelessWidget {
                   } else {
                     BuiltList<Top> top = snapshot.data;
                     return ListView.builder(
+                      shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       itemCount: 10,
                       itemBuilder: (context, position) {
@@ -45,10 +49,14 @@ class GetAnimeTop extends StatelessWidget {
                               leading: Image.network(
                                 top[position].imageUrl,
                               ),
-                              title: Text(top[position].title),
+                              title: Text(
+                                top[position].title,
+                                style: TextStyle(fontSize: 20),
+                              ),
                               subtitle: Text(top[position].score.toString()),
                               onTap: () {
-                                Navigator.of(context).pushNamed('/AnimePage');
+                                Navigator.of(context).pushNamed('/AnimePage',
+                                    arguments: top[position].malId);
                               },
                             ),
                           ),

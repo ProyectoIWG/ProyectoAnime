@@ -1,4 +1,7 @@
 import 'package:ProyectoAnime/Screens/AnimangaSearch.dart';
+import 'package:ProyectoAnime/Screens/AnimeAiringTop.dart';
+import 'package:ProyectoAnime/Screens/AnimeMovieTop.dart';
+import 'package:ProyectoAnime/Screens/AnimePopularity.dart';
 import 'package:ProyectoAnime/Screens/CharacterPersonSearch.dart';
 import 'package:ProyectoAnime/Screens/MyHomePage.dart';
 import 'package:ProyectoAnime/Screens/SearchPage.dart';
@@ -29,6 +32,9 @@ class MyApp extends StatelessWidget {
         '/MangaTop': (context) => GetMangaTop(),
         '/SearchPage': (context) => SearchButton(),
         '/AnimePage': (context) => AnimePage(),
+        '/AnimePopu': (context) => GetAnimePopu(),
+        '/AnimeAiring': (context) => GetAnimeAiring(),
+        '/AnimeMovie': (context) => GetAnimeMovieTop(),
       },
       initialRoute: '/Home',
     );
