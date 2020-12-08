@@ -216,15 +216,6 @@ class PartesuperiorPagAnime extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            animeinfo.genres[2].name,
-                            style: TextStyle(
-                              fontSize: 12.0,
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),
@@ -237,32 +228,3 @@ class PartesuperiorPagAnime extends StatelessWidget {
     );
   }
 }
-
-/*
-Column(
-                      children: <Widget>[
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Director",
-                            style: TextStyle(
-                              fontSize: 12.0,
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(" "),
-                        ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "->Aka Akasaka<-",
-                            style: TextStyle(
-                              fontSize: 12.0,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-*/

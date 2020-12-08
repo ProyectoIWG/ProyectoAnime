@@ -46,7 +46,8 @@ class AnimeSeason extends StatelessWidget {
                       leading: Image.network(_season.anime[position].imageUrl),
                       title: Text(_season.anime[position].title),
                       onTap: () {
-                        Navigator.of(context).pushNamed('/AnimePage');
+                        Navigator.of(context).pushNamed('/AnimePage',
+                            arguments: _season.anime[position].malId);
                       },
                     ),
                   ),

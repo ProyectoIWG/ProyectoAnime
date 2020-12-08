@@ -21,12 +21,17 @@ class _AnimePageState extends State<AnimePage> {
           height: 50,
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          PartesuperiorPagAnime(malId),
-          Sinopsis(malId),
-          Informaciongeneral(malId),
-          Personajes(malId),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          Column(
+            children: <Widget>[
+              PartesuperiorPagAnime(malId),
+              Sinopsis(malId),
+              Informaciongeneral(malId),
+              Personajes(malId),
+            ],
+          ),
         ],
       ),
     );

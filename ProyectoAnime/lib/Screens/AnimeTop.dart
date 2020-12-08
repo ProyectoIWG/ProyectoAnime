@@ -48,7 +48,8 @@ class GetAnimeTop extends StatelessWidget {
                               title: Text(top[position].title),
                               subtitle: Text(top[position].score.toString()),
                               onTap: () {
-                                Navigator.of(context).pushNamed('/AnimePage');
+                                Navigator.of(context).pushNamed('/AnimePage',
+                                    arguments: top[position].malId);
                               },
                             ),
                           ),
