@@ -29,7 +29,7 @@ class _MangaPageState extends State<MangaPage> {
               ParteSuperiorManga(),
               Sinopsis(),
               Informaciongeneral(),
-              Personajes(malId),
+              Personajes(),
             ],
           )
         ],
