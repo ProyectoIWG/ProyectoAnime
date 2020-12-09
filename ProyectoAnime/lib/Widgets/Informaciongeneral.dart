@@ -57,6 +57,7 @@ class Informaciongeneral extends StatelessWidget {
                       alignment: Alignment.bottomLeft,
                       child: Text(
                         ("Titulo: " +
+                            '\n' +
                             data.title +
                             '\n' +
                             data.titleJapanese +

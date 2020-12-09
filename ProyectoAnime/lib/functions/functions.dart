@@ -78,6 +78,12 @@ Future<Anime> animeData(int malId) async {
   return a;
 }
 
+Future<Manga> mangaData(int malId) async {
+  var jikan = Jikan();
+  var a = jikan.getMangaInfo(malId);
+  return a;
+}
+
 Future<CharacterStaff> animeStaff(int malId) async {
   var jikan = Jikan();
   var a = jikan.getAnimeCharactersStaff(malId);
@@ -101,10 +107,24 @@ Future<BuiltList<Promo>> getVideos(int malId) {
   return a;
 }
 
-Future<CharacterStaff> getStaff(int malId) {
+Future<CharacterStaff> getStaffA(int malId) {
   var jikan = Jikan();
   var a = jikan.getAnimeCharactersStaff(malId);
   return a;
+}
+
+Future<BuiltList<CharacterRole>> getStaffM(int malId) {
+  var jikan = Jikan();
+  var a = jikan.getMangaCharacters(malId);
+  return a;
+}
+
+verificarCaps(int number) {
+  if (number == null) {
+    return '?';
+  } else {
+    return number.toString();
+  }
 }
 
 verificarImagen1(String str) {
