@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:ProyectoAnime/jikan_api.dart';
 
-class Personajes extends StatelessWidget {
+class PersonajesManga extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(

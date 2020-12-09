@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Informaciongeneral extends StatelessWidget {
+class InfoGeneralManga extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
