@@ -4,9 +4,15 @@ import 'package:ProyectoAnime/Widgets/Personajes.dart';
 import 'package:ProyectoAnime/widgets/ParteSuperiorManga.dart';
 import 'package:flutter/material.dart';
 
+class MangaPage extends StatefulWidget {
+  @override
+  _MangaPageState createState() => _MangaPageState();
+}
+
 class MangaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    int malId = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -15,12 +21,17 @@ class MangaPage extends StatelessWidget {
           height: 50,
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          ParteSuperiorManga(malId),
-          Sinopsis(malId),
-          Informaciongeneral(malId),
-          Personajes(malId),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          Column(
+            children: <Widget>[
+              ParteSuperiorManga(malId),
+              Sinopsis(malId),
+              Informaciongeneral(malId),
+              Personajes(malId),
+            ],
+          )
         ],
       ),
     );
