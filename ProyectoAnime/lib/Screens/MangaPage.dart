@@ -12,7 +12,6 @@ class MangaPage extends StatefulWidget {
 class _MangaPageState extends State<MangaPage> {
   @override
   Widget build(BuildContext context) {
-    int malId = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
