@@ -30,7 +30,39 @@ class Informaciongeneral extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.topLeft,
-                child: Text(" "),
+                child: Text(
+                  "Tipo:",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Status:",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Generos:",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Autores:",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
+                ),
               ),
             ],
           ),
