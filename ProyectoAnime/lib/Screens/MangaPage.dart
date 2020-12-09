@@ -9,7 +9,7 @@ class MangaPage extends StatefulWidget {
   _MangaPageState createState() => _MangaPageState();
 }
 
-class MangaPage extends StatelessWidget {
+class _MangaPageState extends State<MangaPage> {
   @override
   Widget build(BuildContext context) {
     int malId = ModalRoute.of(context).settings.arguments;
@@ -26,9 +26,9 @@ class MangaPage extends StatelessWidget {
         children: [
           Column(
             children: <Widget>[
-              ParteSuperiorManga(malId),
-              Sinopsis(malId),
-              Informaciongeneral(malId),
+              ParteSuperiorManga(),
+              Sinopsis(),
+              Informaciongeneral(),
               Personajes(malId),
             ],
           )
