@@ -119,6 +119,12 @@ Future<BuiltList<CharacterRole>> getStaffM(int malId) {
   return a;
 }
 
+Future<Person> getPersonInfo(int malId) {
+  var jikan = Jikan();
+  var a = jikan.getPersonInfo(malId);
+  return a;
+}
+
 verificarCaps(int number) {
   if (number == null) {
     return '?';
