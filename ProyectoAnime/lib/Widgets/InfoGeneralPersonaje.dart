@@ -47,17 +47,28 @@ class InfoGeneralPersonaje extends StatelessWidget {
                   margin: EdgeInsets.symmetric(
                     vertical: 10.0,
                   ),
-                  height: 60,
+                  height: 100,
                   width: 300,
                   child: Row(
                     children: <Widget>[
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text("nombre"),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Text("idioma"),
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                          vertical: 10.0,
+                        ),
+                        height: 100,
+                        width: 100,
+                        child: Column(
+                          children: <Widget>[
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text("nombre"),
+                            ),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text("idioma"),
+                            ),
+                          ],
+                        ),
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(
@@ -72,7 +83,7 @@ class InfoGeneralPersonaje extends StatelessWidget {
                         height: 60,
                         width: 70,
                         child: Align(
-                          alignment: Alignment.centerRight,
+                          alignment: Alignment.centerLeft,
                           child: Image.asset(
                             "assets/chainsaw.png",
                             width: 90,
