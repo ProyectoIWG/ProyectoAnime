@@ -52,7 +52,11 @@ class InfoGeneralPersonaje extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       Align(
-                        alignment: Alignment.centerRight,
+                        alignment: Alignment.centerLeft,
+                        child: Text("nombre"),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomLeft,
                         child: Text("idioma"),
                       ),
                       Container(
@@ -68,7 +72,7 @@ class InfoGeneralPersonaje extends StatelessWidget {
                         height: 60,
                         width: 70,
                         child: Align(
-                          alignment: Alignment.centerLeft,
+                          alignment: Alignment.centerRight,
                           child: Image.asset(
                             "assets/chainsaw.png",
                             width: 90,
