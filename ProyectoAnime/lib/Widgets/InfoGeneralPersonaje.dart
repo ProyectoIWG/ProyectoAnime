@@ -18,11 +18,14 @@ class InfoGeneralPersonaje extends StatelessWidget {
                 width: 2.5,
               )),
           height: 40,
-          width: 170,
-          child: Align(
-            alignment: Alignment.center,
-            child: Text("actor"),
-          ),
+          width: 350,
+          child: ListView(children: <Widget>[
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                  "historia/backstory: nose el loco le paso esto esto otro crecio asi y asi"),
+            ),
+          ]),
         ),
         Container(
           decoration: BoxDecoration(
@@ -31,14 +34,51 @@ class InfoGeneralPersonaje extends StatelessWidget {
                 color: Colors.black,
                 width: 2.5,
               )),
-          height: 300,
+          height: 440,
           width: 350,
           child: ListView(
             children: <Widget>[
               Align(
-                alignment: Alignment.topLeft,
-                child: Text("nombre japones generico"),
+                alignment: Alignment.center,
+                child: Text("actores de voz:"),
               ),
+              for (int i = 0; i < 6; i++)
+                Container(
+                  margin: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                  ),
+                  height: 60,
+                  width: 300,
+                  child: Row(
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Text("idioma"),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 10.0,
+                        ),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 2.5,
+                            )),
+                        height: 60,
+                        width: 70,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Image.asset(
+                            "assets/chainsaw.png",
+                            width: 90,
+                            height: 60,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
             ],
           ),
         ),
