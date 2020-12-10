@@ -68,7 +68,7 @@ class PartesuperiorPersona extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child:
-                          Text("Cumpleaños: " + data.birthday.substring(0, 10)),
+                          Text("Cumpleaños: " + verificarCumple(data.birthday)),
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -76,7 +76,7 @@ class PartesuperiorPersona extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text(data.about),
+                      child: Text(verificarAbout(data.about)),
                     ),
                   ],
                 ),

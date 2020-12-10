@@ -101,9 +101,9 @@ getDirector(CharacterStaff data) {
   return '?';
 }
 
-Future<BuiltList<Promo>> getVideos(int malId) {
+Future<BuiltList<Episode>> getVideos(int malId) {
   var jikan = Jikan();
-  var a = jikan.getAnimeVideos(malId);
+  var a = jikan.getAnimeEpisodes(malId);
   return a;
 }
 
@@ -162,5 +162,21 @@ verificarNombre(BuiltList<VoiceActor> data) {
         return i.name;
       }
     }
+  }
+}
+
+verificarCumple(var str) {
+  if (str == null) {
+    return '?';
+  } else {
+    return str.substring(0, 10);
+  }
+}
+
+verificarAbout(var str) {
+  if (str == null) {
+    return '';
+  } else {
+    return str;
   }
 }

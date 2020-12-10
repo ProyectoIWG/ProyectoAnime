@@ -1,10 +1,8 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:flutter/material.dart';
-import 'package:link/link.dart';
 import 'package:ProyectoAnime/functions/functions.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import '../jikan_api.dart';
-//import 'package:webview_flutter/webview_flutter.dart';
 
 class Informaciongeneral extends StatelessWidget {
   final int mailId;
@@ -102,14 +100,22 @@ class Informaciongeneral extends StatelessWidget {
                             ConnectionState.waiting) {
                           return CircularProgressIndicator();
                         } else {
-                          BuiltList<Promo> data2 = snapshot.data;
-                          return Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Link(
-                                child: Text(
-                                    "Link: Ver Trailer" + ' ' + data.title),
-                                url: data2.first.videoUrl),
-                          );
+                          BuiltList<Episode> data2 = snapshot.data;
+                          if (data2.isEmpty || data2.first.videoUrl == null) {
+                            return Text('');
+                          } else {
+                            return Align(
+                              alignment: Alignment.bottomLeft,
+                              child: RaisedButton(
+                                child: Text('Presiona para ver: ' + data.title),
+                                onPressed: () {
+                                  String url = data2.first.videoUrl.substring(
+                                      0, data2.first.videoUrl.length - 2);
+                                  launch(url);
+                                },
+                              ),
+                            );
+                          }
                         }
                       },
                     ),
