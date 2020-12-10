@@ -30,7 +30,7 @@ class ParteSuperiorPersonaje extends StatelessWidget {
         ),
         Container(
           decoration: BoxDecoration(
-              color: Colors.yellow,
+              color: Colors.green[100],
               border: Border.all(
                 color: Colors.lightBlue,
                 width: 2.5,
