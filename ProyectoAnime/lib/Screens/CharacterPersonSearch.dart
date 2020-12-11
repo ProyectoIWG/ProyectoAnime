@@ -63,6 +63,10 @@ class _CharPerSearchState extends State<CharPerSearch> {
                               if (_tipo == SearchType.person) {
                                 Navigator.of(context).pushNamed('/PersonPage',
                                     arguments: animedata[position].malId);
+                              } else {
+                                Navigator.of(context).pushNamed(
+                                    '/CharacterPage',
+                                    arguments: animedata[position].malId);
                               }
                             },
                           ),

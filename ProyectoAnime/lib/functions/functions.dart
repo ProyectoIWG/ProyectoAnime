@@ -101,6 +101,12 @@ getDirector(CharacterStaff data) {
   return '?';
 }
 
+Future<Character> getCharacData(int malId) {
+  var jikan = Jikan();
+  var a = jikan.getCharacterInfo(malId);
+  return a;
+}
+
 Future<BuiltList<Episode>> getVideos(int malId) {
   var jikan = Jikan();
   var a = jikan.getAnimeEpisodes(malId);
@@ -179,4 +185,12 @@ verificarAbout(var str) {
   } else {
     return str;
   }
+}
+
+String getSeries(BuiltList<CharacterRole> data) {
+  String names = '';
+  for (var i in data) {
+    names += i.name + '\n';
+  }
+  return names;
 }

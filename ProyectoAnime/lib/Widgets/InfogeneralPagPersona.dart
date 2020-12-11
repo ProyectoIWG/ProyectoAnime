@@ -131,10 +131,11 @@ class InfogeneralPagPersona extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border(
-                        top: BorderSide(
-                      color: Colors.black,
-                      width: 2.5,
-                    )),
+                      top: BorderSide(
+                        color: Colors.black,
+                        width: 2.5,
+                      ),
+                    ),
                   ),
                   height: 440,
                   width: 388,
