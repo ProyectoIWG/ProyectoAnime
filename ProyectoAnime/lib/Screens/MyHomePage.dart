@@ -29,10 +29,9 @@ class MyHomePageStatus extends State<MyHomePage> {
         ],
       ),
       drawer: MenuLateral(),
-      body: Column(
-        children: <Widget>[
-          AnimeSeason(fecha: _fecha),
-        ],
+      body: Container(
+        alignment: Alignment.center,
+        child: AnimeSeason(fecha: _fecha),
       ),
     );
   }

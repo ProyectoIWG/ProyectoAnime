@@ -53,7 +53,8 @@ class GetAnimePopu extends StatelessWidget {
                                 top[position].title,
                                 style: TextStyle(fontSize: 20),
                               ),
-                              subtitle: Text(top[position].score.toString()),
+                              subtitle: Text(top[position].members.toString() +
+                                  ' Favotiros'),
                               onTap: () {
                                 Navigator.of(context).pushNamed('/AnimePage',
                                     arguments: top[position].malId);
