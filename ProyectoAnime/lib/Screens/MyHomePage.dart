@@ -8,11 +8,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageStatus extends State<MyHomePage> {
-  /*
-  var result;
-  var _lista = ["Anime", "Manga", "Persona", "Personaje"];
-  String _vista = "Seleccione una opción";
-  var _tipo;*/
   DateTime _fecha = DateTime.now();
 
   @override

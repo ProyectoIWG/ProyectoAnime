@@ -146,7 +146,7 @@ class PartesuperiorPagAnime extends StatelessWidget {
                         ),
                         Align(
                           alignment: Alignment.center,
-                          child: Text(animeinfo.episodes.toString()),
+                          child: Text(verificarCaps(animeinfo.episodes)),
                         ),
                       ],
                     ),

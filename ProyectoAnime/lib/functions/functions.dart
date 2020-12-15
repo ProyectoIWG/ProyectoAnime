@@ -78,6 +78,12 @@ Future<Anime> animeData(int malId) async {
   return a;
 }
 
+Future<Manga> mangaData(int malId) async {
+  var jikan = Jikan();
+  var a = jikan.getMangaInfo(malId);
+  return a;
+}
+
 Future<CharacterStaff> animeStaff(int malId) async {
   var jikan = Jikan();
   var a = jikan.getAnimeCharactersStaff(malId);
@@ -95,16 +101,42 @@ getDirector(CharacterStaff data) {
   return '?';
 }
 
-Future<BuiltList<Promo>> getVideos(int malId) {
+Future<Character> getCharacData(int malId) {
   var jikan = Jikan();
-  var a = jikan.getAnimeVideos(malId);
+  var a = jikan.getCharacterInfo(malId);
   return a;
 }
 
-Future<CharacterStaff> getStaff(int malId) {
+Future<BuiltList<Episode>> getVideos(int malId) {
+  var jikan = Jikan();
+  var a = jikan.getAnimeEpisodes(malId);
+  return a;
+}
+
+Future<CharacterStaff> getStaffA(int malId) {
   var jikan = Jikan();
   var a = jikan.getAnimeCharactersStaff(malId);
   return a;
+}
+
+Future<BuiltList<CharacterRole>> getStaffM(int malId) {
+  var jikan = Jikan();
+  var a = jikan.getMangaCharacters(malId);
+  return a;
+}
+
+Future<Person> getPersonInfo(int malId) {
+  var jikan = Jikan();
+  var a = jikan.getPersonInfo(malId);
+  return a;
+}
+
+verificarCaps(int number) {
+  if (number == null) {
+    return '?';
+  } else {
+    return number.toString();
+  }
 }
 
 verificarImagen1(String str) {
@@ -137,4 +169,28 @@ verificarNombre(BuiltList<VoiceActor> data) {
       }
     }
   }
+}
+
+verificarCumple(var str) {
+  if (str == null) {
+    return '?';
+  } else {
+    return str.substring(0, 10);
+  }
+}
+
+verificarAbout(var str) {
+  if (str == null) {
+    return '';
+  } else {
+    return str;
+  }
+}
+
+String getSeries(BuiltList<CharacterRole> data) {
+  String names = '';
+  for (var i in data) {
+    names += i.name + '\n';
+  }
+  return names;
 }

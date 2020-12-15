@@ -3,7 +3,10 @@ import 'package:ProyectoAnime/Screens/AnimeAiringTop.dart';
 import 'package:ProyectoAnime/Screens/AnimeMovieTop.dart';
 import 'package:ProyectoAnime/Screens/AnimePopularity.dart';
 import 'package:ProyectoAnime/Screens/CharacterPersonSearch.dart';
+import 'package:ProyectoAnime/Screens/MangaPage.dart';
 import 'package:ProyectoAnime/Screens/MyHomePage.dart';
+import 'package:ProyectoAnime/Screens/PagPersona.dart';
+import 'package:ProyectoAnime/Screens/PersonajePage.dart';
 import 'package:ProyectoAnime/Screens/SearchPage.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +35,9 @@ class MyApp extends StatelessWidget {
         '/MangaTop': (context) => GetMangaTop(),
         '/SearchPage': (context) => SearchButton(),
         '/AnimePage': (context) => AnimePage(),
+        '/MangaPage': (context) => MangaPage(),
+        '/PersonPage': (context) => PagPersona(),
+        '/CharacterPage': (context) => PersonajePage(),
         '/AnimePopu': (context) => GetAnimePopu(),
         '/AnimeAiring': (context) => GetAnimeAiring(),
         '/AnimeMovie': (context) => GetAnimeMovieTop(),

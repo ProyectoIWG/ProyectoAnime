@@ -60,8 +60,13 @@ class _CharPerSearchState extends State<CharPerSearch> {
                                 Image.network(animedata[position].imageUrl),
                             title: Text(animedata[position].name),
                             onTap: () {
-                              if (_tipo == SearchType.anime) {
-                                Navigator.of(context).pushNamed('/AnimePage');
+                              if (_tipo == SearchType.person) {
+                                Navigator.of(context).pushNamed('/PersonPage',
+                                    arguments: animedata[position].malId);
+                              } else {
+                                Navigator.of(context).pushNamed(
+                                    '/CharacterPage',
+                                    arguments: animedata[position].malId);
                               }
                             },
                           ),

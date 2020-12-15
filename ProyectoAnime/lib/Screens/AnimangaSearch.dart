@@ -63,6 +63,9 @@ class _AnimangaSearchState extends State<AnimangaSearch> {
                               if (_tipo == SearchType.anime) {
                                 Navigator.of(context).pushNamed('/AnimePage',
                                     arguments: animedata[position].malId);
+                              } else if (_tipo == SearchType.manga) {
+                                Navigator.of(context).pushNamed('/MangaPage',
+                                    arguments: animedata[position].malId);
                               }
                             },
                           ),

@@ -8,7 +8,7 @@ class Personajes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: getStaff(malId),
+      future: getStaffA(malId),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return CircularProgressIndicator();
@@ -17,90 +17,83 @@ class Personajes extends StatelessWidget {
           return Container(
             child: Column(
               children: [
-                ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  itemCount: data.characters.length,
-                  itemBuilder: (context, position) {
-                    return Column(
-                      children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.symmetric(
-                                vertical: 25.0,
-                                horizontal: 10.0,
+                for (int i = 0; i < data.characters.length; i++)
+                  Column(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                              vertical: 25.0,
+                              horizontal: 10.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Colors.black,
+                                width: 2.5,
                               ),
-                              decoration: BoxDecoration(
+                            ),
+                            height: 100,
+                            width: 90,
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Image.network(
+                                verificarImagen1(data.characters[i].imageUrl),
+                                width: 90,
+                                height: 125,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.yellow,
+                                border: Border.all(
+                                  color: Colors.lightBlue,
+                                  width: 2.5,
+                                )),
+                            height: 40,
+                            width: 165,
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Peronaje: " +
+                                    data.characters[i].name +
+                                    '\nActor: ' +
+                                    verificarNombre(
+                                        data.characters[i].voiceActors),
+                                style: TextStyle(
+                                  fontSize: 12.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                              horizontal: 10.0,
+                            ),
+                            decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
                                   color: Colors.black,
                                   width: 2.5,
-                                ),
-                              ),
-                              height: 100,
-                              width: 90,
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Image.network(
-                                  verificarImagen1(
-                                      data.characters[position].imageUrl),
-                                  width: 90,
-                                  height: 125,
-                                ),
+                                )),
+                            height: 100,
+                            width: 90,
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Image.network(
+                                verificarImagen2(
+                                    data.characters[i].voiceActors),
+                                width: 90,
+                                height: 125,
                               ),
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.yellow,
-                                  border: Border.all(
-                                    color: Colors.lightBlue,
-                                    width: 2.5,
-                                  )),
-                              height: 40,
-                              width: 165,
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "Peronaje: " +
-                                      data.characters[position].name +
-                                      '\nActor: ' +
-                                      verificarNombre(data
-                                          .characters[position].voiceActors),
-                                  style: TextStyle(
-                                    fontSize: 12.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.symmetric(
-                                horizontal: 10.0,
-                              ),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 2.5,
-                                  )),
-                              height: 100,
-                              width: 90,
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Image.network(
-                                  verificarImagen2(
-                                      data.characters[position].voiceActors),
-                                  width: 90,
-                                  height: 125,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    );
-                  },
-                ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
               ],
             ),
           );

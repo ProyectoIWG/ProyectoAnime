@@ -54,7 +54,10 @@ class GetMangaTop extends StatelessWidget {
                                 style: TextStyle(fontSize: 20),
                               ),
                               subtitle: Text(top[position].score.toString()),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.of(context).pushNamed('/MangaPage',
+                                    arguments: top[position].malId);
+                              },
                             ),
                           ),
                         );
