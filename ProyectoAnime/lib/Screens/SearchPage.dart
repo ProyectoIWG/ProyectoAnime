@@ -17,6 +17,7 @@ class _SearchButtonState extends State<SearchButton> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Image.asset(
@@ -26,30 +27,40 @@ class _SearchButtonState extends State<SearchButton> {
       ),
       body: Column(
         children: [
-          Text(
-            'Puede buscar animes, mangas, personajes \no personas relacionadas con el medio',
-            style: TextStyle(fontSize: 20),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10), color: Colors.black54),
+            alignment: Alignment.center,
+            child: Text(
+              'Busca animes, mangas, personajes \no personas relacionadas con el medio',
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              DropdownButton(
-                // menu para elegir busqueda
-                items: _lista
-                    .map((String a) =>
-                        DropdownMenuItem(value: a, child: Text(a)))
-                    .toList(),
-                onChanged: (_value) {
-                  setState(() {
-                    _vista = _value;
-                    _tipo = tipo(_value);
-                  });
-                },
-                hint: Text(
-                  _vista,
-                  style: TextStyle(color: Colors.black87),
+              Container(
+                child: DropdownButton(
+                  // menu para elegir busqueda
+                  items: _lista
+                      .map((String a) =>
+                          DropdownMenuItem(value: a, child: Text(a)))
+                      .toList(),
+                  onChanged: (_value) {
+                    setState(
+                      () {
+                        _vista = _value;
+                        _tipo = tipo(_value);
+                      },
+                    );
+                  },
+                  hint: Text(
+                    _vista,
+                    style: TextStyle(color: Colors.black87),
+                  ),
                 ),
               ),
+              /*
               IconButton(
                 icon: Icon(Icons.search),
                 onPressed: () {
@@ -80,21 +91,80 @@ class _SearchButtonState extends State<SearchButton> {
                       break;
                   }
                 },
-              )
+              ),*/
             ],
           ),
-          TextField(
-            // donde se busca
-            decoration: InputDecoration(
-                hintText: "Busca un anime", icon: Icon(Icons.search)),
-            onSubmitted: (String str) {
-              setState(
-                () {
-                  result = str;
-                },
-              );
-            },
+          Container(
+            child: TextField(
+              // donde se busca
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide(color: Colors.black45),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide(color: Colors.black),
+                ),
+                filled: true,
+                fillColor: Colors.grey.shade200,
+                hintText: "Busca un anime",
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.black,
+                ),
+              ),
+              onSubmitted: (String str) {
+                setState(
+                  () {
+                    result = str;
+                  },
+                );
+              },
+            ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(top: 35),
+            child: MaterialButton(
+              child: Image.asset(
+                'assets/lupa.png',
+                width: 400,
+                height: 400,
+              ),
+              onPressed: () {
+                switch (_tipo) {
+                  case SearchType.anime:
+                    {
+                      Navigator.of(context)
+                          .pushNamed('/AnimangaS', arguments: [result, _tipo]);
+                    }
+                    break;
+                  case SearchType.manga:
+                    {
+                      Navigator.of(context)
+                          .pushNamed('/AnimangaS', arguments: [result, _tipo]);
+                    }
+                    break;
+                  case SearchType.character:
+                    {
+                      Navigator.of(context)
+                          .pushNamed('/CharPerS', arguments: [result, _tipo]);
+                    }
+                    break;
+                  case SearchType.person:
+                    {
+                      Navigator.of(context)
+                          .pushNamed('/CharPerS', arguments: [result, _tipo]);
+                    }
+                    break;
+                }
+              },
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(40),
+              ),
+            ),
+          )
         ],
       ),
     );

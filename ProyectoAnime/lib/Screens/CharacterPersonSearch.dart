@@ -25,7 +25,15 @@ class _CharPerSearchState extends State<CharPerSearch> {
       ),
       body: Column(
         children: [
-          Text('Los resultados de la busqueda son:'),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40), color: Colors.black87),
+            alignment: Alignment.center,
+            child: Text(
+              'Los resultados de la busqueda son:',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
           FutureBuilder(
             future: buscar(_strBuscar, _tipo),
             builder: (context, snapshot) {
@@ -42,7 +50,11 @@ class _CharPerSearchState extends State<CharPerSearch> {
               } else {
                 BuiltList<Search> animedata = snapshot.data;
                 return Container(
-                  height: 625,
+                  decoration: BoxDecoration(
+                    color: Colors.black87,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  height: 634.05,
                   child: ListView.builder(
                     itemCount: animedata.length,
                     scrollDirection: Axis.vertical,
@@ -55,10 +67,14 @@ class _CharPerSearchState extends State<CharPerSearch> {
                             vertical: 1,
                             horizontal: 15,
                           ),
+                          color: Colors.white10,
                           child: ListTile(
                             leading:
                                 Image.network(animedata[position].imageUrl),
-                            title: Text(animedata[position].name),
+                            title: Text(
+                              animedata[position].name,
+                              style: TextStyle(color: Colors.white),
+                            ),
                             onTap: () {
                               if (_tipo == SearchType.person) {
                                 Navigator.of(context).pushNamed('/PersonPage',

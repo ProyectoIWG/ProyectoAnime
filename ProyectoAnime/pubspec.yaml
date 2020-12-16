@@ -57,6 +57,7 @@ flutter:
     - assets/iconologo.png
     - assets/Saber.png
     - assets/Kaguya.jpg
+    - assets/lupa.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

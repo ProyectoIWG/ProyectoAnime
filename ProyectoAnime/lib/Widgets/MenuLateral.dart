@@ -13,7 +13,7 @@ class MenuLateral extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            decoration: BoxDecoration(color: Colors.black),
+            decoration: BoxDecoration(color: Colors.black87),
             accountName: Text(
                 'Creado por \nAdolo Espinosa, Nicolas Bello y \nDarwin Gutiérrez'),
             accountEmail: null,

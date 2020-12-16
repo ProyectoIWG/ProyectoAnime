@@ -17,15 +17,22 @@ class GetAnimePopu extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40),
+                  color: Colors.black87),
+              alignment: Alignment.center,
               child: Text(
                 'Top 10 animes más populares',
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
             Container(
-              height: 615,
+              decoration: BoxDecoration(
+                color: Colors.black87,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              height: 634.05,
               child: FutureBuilder(
                 future: topPopu(TopType.anime),
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -45,16 +52,20 @@ class GetAnimePopu extends StatelessWidget {
                               vertical: 1,
                               horizontal: 15,
                             ),
+                            color: Colors.white10,
                             child: ListTile(
                               leading: Image.network(
                                 top[position].imageUrl,
                               ),
                               title: Text(
                                 top[position].title,
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white),
                               ),
-                              subtitle: Text(top[position].members.toString() +
-                                  ' Favotiros'),
+                              subtitle: Text(
+                                top[position].members.toString() + ' Favotiros',
+                                style: TextStyle(color: Colors.white70),
+                              ),
                               onTap: () {
                                 Navigator.of(context).pushNamed('/AnimePage',
                                     arguments: top[position].malId);
