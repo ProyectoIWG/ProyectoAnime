@@ -124,7 +124,27 @@ class _SearchButtonState extends State<SearchButton> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 35),
+            padding: const EdgeInsets.only(top: 10),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.black38,
+              ),
+              alignment: Alignment.center,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Presiona la imagen para buscar ',
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                  Icon(Icons.arrow_downward)
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 25),
             child: MaterialButton(
               child: Image.asset(
                 'assets/lupa.png',
