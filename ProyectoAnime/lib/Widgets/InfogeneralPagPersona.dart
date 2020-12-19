@@ -20,9 +20,9 @@ class InfogeneralPagPersona extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.zero,
                   decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.grey[800],
                       border: Border.all(
-                        color: Colors.grey,
+                        color: Colors.grey[800],
                         width: 3,
                       ),
                       borderRadius: BorderRadius.circular(10)),
@@ -59,9 +59,9 @@ class InfogeneralPagPersona extends StatelessWidget {
                           width: 310,
                           child: Container(
                             decoration: BoxDecoration(
-                                color: Colors.grey,
+                                color: Colors.grey[800],
                                 border: Border.all(
-                                  color: Colors.grey,
+                                  color: Colors.grey[800],
                                   width: 2.5,
                                 ),
                                 borderRadius: BorderRadius.circular(10)),
@@ -127,9 +127,9 @@ class InfogeneralPagPersona extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.zero,
                   decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.grey[800],
                       border: Border.all(
-                        color: Colors.grey,
+                        color: Colors.grey[800],
                         width: 3,
                       ),
                       borderRadius: BorderRadius.circular(10)),
@@ -167,9 +167,9 @@ class InfogeneralPagPersona extends StatelessWidget {
                           width: 310,
                           child: Container(
                             decoration: BoxDecoration(
-                                color: Colors.grey,
+                                color: Colors.grey[800],
                                 border: Border.all(
-                                  color: Colors.grey,
+                                  color: Colors.grey[800],
                                   width: 2.5,
                                 ),
                                 borderRadius: BorderRadius.circular(10)),
@@ -190,9 +190,9 @@ class InfogeneralPagPersona extends StatelessWidget {
                                         horizontal: 10.0,
                                       ),
                                       decoration: BoxDecoration(
-                                          color: Colors.grey,
+                                          color: Colors.grey[800],
                                           border: Border.all(
-                                            color: Colors.grey,
+                                            color: Colors.grey[800],
                                             width: 2.5,
                                           ),
                                           borderRadius:
@@ -232,9 +232,9 @@ class InfogeneralPagPersona extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.zero,
                   decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.grey[800],
                       border: Border.all(
-                        color: Colors.grey,
+                        color: Colors.grey[800],
                         width: 3,
                       ),
                       borderRadius: BorderRadius.circular(10)),
@@ -271,9 +271,9 @@ class InfogeneralPagPersona extends StatelessWidget {
                           width: 310,
                           child: Container(
                             decoration: BoxDecoration(
-                                color: Colors.grey,
+                                color: Colors.grey[800],
                                 border: Border.all(
-                                  color: Colors.grey,
+                                  color: Colors.grey[800],
                                   width: 2.5,
                                 ),
                                 borderRadius: BorderRadius.circular(10)),

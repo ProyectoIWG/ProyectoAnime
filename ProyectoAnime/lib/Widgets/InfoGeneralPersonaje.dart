@@ -22,9 +22,9 @@ class InfoGeneralPersonaje extends StatelessWidget {
                   horizontal: 20.0,
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: Colors.grey[800],
                     border: Border.all(
-                      color: Colors.grey,
+                      color: Colors.grey[800],
                       width: 2.5,
                     ),
                     borderRadius: BorderRadius.circular(10)),
@@ -76,9 +76,9 @@ verificarVoice(Character data) {
                   width: 310,
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.grey,
+                        color: Colors.grey[800],
                         border: Border.all(
-                          color: Colors.grey,
+                          color: Colors.grey[800],
                           width: 2.5,
                         ),
                         borderRadius: BorderRadius.circular(10)),
