@@ -24,7 +24,8 @@ class InfogeneralPagPersona extends StatelessWidget {
                       border: Border.all(
                         color: Colors.black,
                         width: 3,
-                      )),
+                      ),
+                      borderRadius: BorderRadius.circular(10)),
                   height: 40,
                   width: 170,
                   child: Align(
@@ -55,12 +56,12 @@ class InfogeneralPagPersona extends StatelessWidget {
                           width: 310,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.black,
-                                width: 2.5,
-                              ),
-                            ),
+                                color: Colors.white,
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 2.5,
+                                ),
+                                borderRadius: BorderRadius.circular(10)),
                             child: Column(
                               children: [
                                 Row(
@@ -80,7 +81,9 @@ class InfogeneralPagPersona extends StatelessWidget {
                                           border: Border.all(
                                             color: Colors.black,
                                             width: 2.5,
-                                          )),
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
                                       height: 60,
                                       width: 70,
                                       child: Align(

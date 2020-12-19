@@ -22,12 +22,12 @@ class ParteSuperiorPersonaje extends StatelessWidget {
                   horizontal: 10.0,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 2.5,
-                  ),
-                ),
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 2.5,
+                    ),
+                    borderRadius: BorderRadius.circular(10)),
                 height: 120,
                 width: 90,
                 child: Align(
@@ -41,12 +41,12 @@ class ParteSuperiorPersonaje extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.green[100],
-                  border: Border.all(
-                    color: Colors.lightBlue,
-                    width: 2.5,
-                  ),
-                ),
+                    color: Colors.green[100],
+                    border: Border.all(
+                      color: Colors.lightBlue,
+                      width: 2.5,
+                    ),
+                    borderRadius: BorderRadius.circular(10)),
                 height: 120,
                 width: 250,
                 child: ListView(

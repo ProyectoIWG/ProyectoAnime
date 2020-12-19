@@ -22,12 +22,12 @@ class InfoGeneralPersonaje extends StatelessWidget {
                   horizontal: 20.0,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 2.5,
-                  ),
-                ),
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 2.5,
+                    ),
+                    borderRadius: BorderRadius.circular(10)),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(data.about),
@@ -73,12 +73,12 @@ verificarVoice(Character data) {
                   width: 310,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2.5,
-                      ),
-                    ),
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2.5,
+                        ),
+                        borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
                         Column(

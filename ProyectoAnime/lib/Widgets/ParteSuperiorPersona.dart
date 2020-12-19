@@ -26,7 +26,8 @@ class PartesuperiorPersona extends StatelessWidget {
                     border: Border.all(
                       color: Colors.black,
                       width: 2.5,
-                    )),
+                    ),
+                    borderRadius: BorderRadius.circular(10)),
                 height: 120,
                 width: 90,
                 child: Align(
@@ -44,7 +45,8 @@ class PartesuperiorPersona extends StatelessWidget {
                     border: Border.all(
                       color: Colors.lightBlue,
                       width: 2.5,
-                    )),
+                    ),
+                    borderRadius: BorderRadius.circular(10)),
                 height: 120,
                 width: 250,
                 child: ListView(
