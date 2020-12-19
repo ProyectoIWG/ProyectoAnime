@@ -152,8 +152,12 @@ verificarImagen2(BuiltList<VoiceActor> data) {
     return 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6169b41c-74fe-4235-9815-1e8d4dc87406/d3hgxl4-a6d413df-c24f-4077-b1d2-8765659ef170.png/v1/fill/w_900,h_800,strp/png_fondo_blanco_by_camilhitha124_d3hgxl4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD04MDAiLCJwYXRoIjoiXC9mXC82MTY5YjQxYy03NGZlLTQyMzUtOTgxNS0xZThkNGRjODc0MDZcL2QzaGd4bDQtYTZkNDEzZGYtYzI0Zi00MDc3LWIxZDItODc2NTY1OWVmMTcwLnBuZyIsIndpZHRoIjoiPD05MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.ZwoW6wOVYsacJ1ORGubUbgFGNpuBOXcOAme5iDko2sM';
   } else {
     for (var i in data) {
-      if (i.language == 'Japanese') {
-        return i.imageUrl;
+      if (i.language == "Japanese") {
+        if (i.imageUrl == null) {
+          return 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6169b41c-74fe-4235-9815-1e8d4dc87406/d3hgxl4-a6d413df-c24f-4077-b1d2-8765659ef170.png/v1/fill/w_900,h_800,strp/png_fondo_blanco_by_camilhitha124_d3hgxl4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD04MDAiLCJwYXRoIjoiXC9mXC82MTY5YjQxYy03NGZlLTQyMzUtOTgxNS0xZThkNGRjODc0MDZcL2QzaGd4bDQtYTZkNDEzZGYtYzI0Zi00MDc3LWIxZDItODc2NTY1OWVmMTcwLnBuZyIsIndpZHRoIjoiPD05MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.ZwoW6wOVYsacJ1ORGubUbgFGNpuBOXcOAme5iDko2sM';
+        } else {
+          return i.imageUrl;
+        }
       }
     }
   }
@@ -164,8 +168,10 @@ verificarNombre(BuiltList<VoiceActor> data) {
     return '';
   } else {
     for (var i in data) {
-      if (i.language == 'Japanese') {
+      if (i.language == "Japanese") {
         return i.name;
+      } else {
+        return '';
       }
     }
   }

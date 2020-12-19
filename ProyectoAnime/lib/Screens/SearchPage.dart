@@ -17,7 +17,7 @@ class _SearchButtonState extends State<SearchButton> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -108,7 +108,7 @@ class _SearchButtonState extends State<SearchButton> {
                   borderSide: BorderSide(color: Colors.black),
                 ),
                 filled: true,
-                fillColor: Colors.grey.shade200,
+                fillColor: Colors.white10,
                 hintText: "Se busca con 3 letras o más",
                 icon: Icon(
                   Icons.search,
