@@ -38,10 +38,8 @@ class InfogeneralPagPersona extends StatelessWidget {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.black,
                     border: Border(
                         top: BorderSide(
-                      color: Colors.black,
                       width: 2.5,
                     )),
                   ),
