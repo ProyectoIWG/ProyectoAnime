@@ -9,7 +9,7 @@ class PagPersona extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("assets/FondoPersonaje.jpeg"), fit: BoxFit.cover),
+            image: AssetImage("assets/FondoPersona.png"), fit: BoxFit.cover),
       ),
       child: Scaffold(
         appBar: AppBar(
