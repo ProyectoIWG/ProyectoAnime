@@ -36,6 +36,7 @@ class ParteSuperiorPersonaje extends StatelessWidget {
                     data.imageUrl,
                     width: 90,
                     height: 125,
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
               ),
