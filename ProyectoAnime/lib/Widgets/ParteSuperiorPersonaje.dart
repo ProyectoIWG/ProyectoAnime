@@ -24,7 +24,7 @@ class ParteSuperiorPersonaje extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
-                      color: Colors.black,
+                      color: Colors.grey,
                       width: 2.5,
                     ),
                     borderRadius: BorderRadius.circular(10)),
@@ -41,9 +41,9 @@ class ParteSuperiorPersonaje extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.green[100],
+                    color: Colors.grey,
                     border: Border.all(
-                      color: Colors.lightBlue,
+                      color: Colors.grey,
                       width: 2.5,
                     ),
                     borderRadius: BorderRadius.circular(10)),
@@ -53,7 +53,10 @@ class ParteSuperiorPersonaje extends StatelessWidget {
                   children: <Widget>[
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text("Nombre: " + data.name),
+                      child: Text(
+                        "Nombre: " + data.name,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -61,13 +64,17 @@ class ParteSuperiorPersonaje extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child:
-                          Text("Animeography: " + getSeries(data.animeography)),
+                      child: Text(
+                        "Animeography: " + getSeries(data.animeography),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child:
-                          Text("Mangaography: " + getSeries(data.mangaography)),
+                      child: Text(
+                        "Mangaography: " + getSeries(data.mangaography),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),

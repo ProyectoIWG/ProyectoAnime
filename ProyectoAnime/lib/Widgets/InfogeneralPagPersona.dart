@@ -30,7 +30,10 @@ class InfogeneralPagPersona extends StatelessWidget {
                   width: 170,
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Roles de actuación de voz"),
+                    child: Text(
+                      "Roles de actuación de voz",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
                 Container(
@@ -68,9 +71,12 @@ class InfogeneralPagPersona extends StatelessWidget {
                                   children: <Widget>[
                                     Align(
                                       alignment: Alignment.centerLeft,
-                                      child: Text("Personaje: " +
-                                          data.voiceActingRoles[i].character
-                                              .name),
+                                      child: Text(
+                                        "Personaje: " +
+                                            data.voiceActingRoles[i].character
+                                                .name,
+                                        style: TextStyle(color: Colors.white),
+                                      ),
                                     ),
                                     Container(
                                       margin: EdgeInsets.symmetric(
@@ -100,8 +106,11 @@ class InfogeneralPagPersona extends StatelessWidget {
                                 ),
                                 Align(
                                   alignment: Alignment.centerLeft,
-                                  child: Text('Anime: ' +
-                                      data.voiceActingRoles[i].anime.name),
+                                  child: Text(
+                                    'Anime: ' +
+                                        data.voiceActingRoles[i].anime.name,
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                                 ),
                               ],
                             ),
@@ -118,21 +127,25 @@ class InfogeneralPagPersona extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.zero,
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.grey,
                       border: Border.all(
-                        color: Colors.black,
+                        color: Colors.grey,
                         width: 3,
-                      )),
+                      ),
+                      borderRadius: BorderRadius.circular(10)),
                   height: 40,
                   width: 170,
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Mangas Publicados"),
+                    child: Text(
+                      "Mangas Publicados",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.black,
                     border: Border(
                       top: BorderSide(
                         color: Colors.black,
@@ -154,31 +167,36 @@ class InfogeneralPagPersona extends StatelessWidget {
                           width: 310,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.black,
-                                width: 2.5,
-                              ),
-                            ),
+                                color: Colors.grey,
+                                border: Border.all(
+                                  color: Colors.grey,
+                                  width: 2.5,
+                                ),
+                                borderRadius: BorderRadius.circular(10)),
                             child: Column(
                               children: [
                                 Column(
                                   children: <Widget>[
                                     Align(
                                       alignment: Alignment.centerLeft,
-                                      child: Text("Titulo: " +
-                                          data.publishedManga[i].manga.name),
+                                      child: Text(
+                                        "Titulo: " +
+                                            data.publishedManga[i].manga.name,
+                                        style: TextStyle(color: Colors.white),
+                                      ),
                                     ),
                                     Container(
                                       margin: EdgeInsets.symmetric(
                                         horizontal: 10.0,
                                       ),
                                       decoration: BoxDecoration(
-                                          color: Colors.white,
+                                          color: Colors.grey,
                                           border: Border.all(
-                                            color: Colors.black,
+                                            color: Colors.grey,
                                             width: 2.5,
-                                          )),
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
                                       height: 60,
                                       width: 70,
                                       child: Align(
@@ -194,8 +212,10 @@ class InfogeneralPagPersona extends StatelessWidget {
                                 ),
                                 Align(
                                   alignment: Alignment.centerLeft,
-                                  child: Text('Rol: ' +
-                                      data.publishedManga[i].position),
+                                  child: Text(
+                                    'Rol: ' + data.publishedManga[i].position,
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                                 ),
                               ],
                             ),
@@ -212,21 +232,25 @@ class InfogeneralPagPersona extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.zero,
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.grey,
                       border: Border.all(
-                        color: Colors.black,
+                        color: Colors.grey,
                         width: 3,
-                      )),
+                      ),
+                      borderRadius: BorderRadius.circular(10)),
                   height: 40,
                   width: 170,
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Posición en el Anime"),
+                    child: Text(
+                      "Posición en el Anime",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.black,
                     border: Border(
                         top: BorderSide(
                       color: Colors.black,
@@ -247,21 +271,24 @@ class InfogeneralPagPersona extends StatelessWidget {
                           width: 310,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.black,
-                                width: 2.5,
-                              ),
-                            ),
+                                color: Colors.grey,
+                                border: Border.all(
+                                  color: Colors.grey,
+                                  width: 2.5,
+                                ),
+                                borderRadius: BorderRadius.circular(10)),
                             child: Column(
                               children: [
                                 Column(
                                   children: <Widget>[
                                     Align(
                                       alignment: Alignment.centerLeft,
-                                      child: Text("Titulo: " +
-                                          data.animeStaffPositions[i].anime
-                                              .name),
+                                      child: Text(
+                                        "Titulo: " +
+                                            data.animeStaffPositions[i].anime
+                                                .name,
+                                        style: TextStyle(color: Colors.white),
+                                      ),
                                     ),
                                     Container(
                                       margin: EdgeInsets.symmetric(
@@ -272,7 +299,9 @@ class InfogeneralPagPersona extends StatelessWidget {
                                           border: Border.all(
                                             color: Colors.black,
                                             width: 2.5,
-                                          )),
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
                                       height: 60,
                                       width: 70,
                                       child: Align(
@@ -289,8 +318,11 @@ class InfogeneralPagPersona extends StatelessWidget {
                                 ),
                                 Align(
                                   alignment: Alignment.centerLeft,
-                                  child: Text('Rol: ' +
-                                      data.animeStaffPositions[i].position),
+                                  child: Text(
+                                    'Rol: ' +
+                                        data.animeStaffPositions[i].position,
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                                 ),
                               ],
                             ),

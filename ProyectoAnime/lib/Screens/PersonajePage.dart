@@ -20,6 +20,7 @@ class PersonajePage extends StatelessWidget {
           InfoGeneralPersonaje(malId),
         ],
       ),
+      backgroundColor: Colors.black,
     );
   }
 }

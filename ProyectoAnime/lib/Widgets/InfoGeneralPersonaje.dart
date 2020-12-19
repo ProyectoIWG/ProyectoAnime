@@ -22,15 +22,18 @@ class InfoGeneralPersonaje extends StatelessWidget {
                   horizontal: 20.0,
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.grey,
                     border: Border.all(
-                      color: Colors.black,
+                      color: Colors.grey,
                       width: 2.5,
                     ),
                     borderRadius: BorderRadius.circular(10)),
                 child: Align(
                   alignment: Alignment.center,
-                  child: Text(data.about),
+                  child: Text(
+                    data.about,
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
               verificarVoice(data),
@@ -52,7 +55,7 @@ verificarVoice(Character data) {
         ),
         Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.black,
             border: Border(
               top: BorderSide(
                 color: Colors.black,
@@ -73,9 +76,9 @@ verificarVoice(Character data) {
                   width: 310,
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.grey,
                         border: Border.all(
-                          color: Colors.black,
+                          color: Colors.grey,
                           width: 2.5,
                         ),
                         borderRadius: BorderRadius.circular(10)),
@@ -85,8 +88,11 @@ verificarVoice(Character data) {
                           children: <Widget>[
                             Align(
                               alignment: Alignment.centerLeft,
-                              child:
-                                  Text("Nombre: " + data.voiceActors[i].name),
+                              child: Text(
+                                "Nombre: " + data.voiceActors[i].name,
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white),
+                              ),
                             ),
                             Container(
                               margin: EdgeInsets.symmetric(
@@ -97,7 +103,8 @@ verificarVoice(Character data) {
                                   border: Border.all(
                                     color: Colors.black,
                                     width: 2.5,
-                                  )),
+                                  ),
+                                  borderRadius: BorderRadius.circular(10)),
                               height: 60,
                               width: 70,
                               child: Align(
@@ -113,8 +120,10 @@ verificarVoice(Character data) {
                         ),
                         Align(
                           alignment: Alignment.centerLeft,
-                          child:
-                              Text('Lenguaje: ' + data.voiceActors[i].language),
+                          child: Text(
+                            'Lenguaje: ' + data.voiceActors[i].language,
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ],
                     ),

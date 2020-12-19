@@ -53,7 +53,10 @@ class PartesuperiorPersona extends StatelessWidget {
                   children: <Widget>[
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text("Nombre de pila: " + data.name),
+                      child: Text(
+                        "Nombre de pila: " + data.name,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -61,7 +64,10 @@ class PartesuperiorPersona extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text("Apellido: " + data.familyName),
+                      child: Text(
+                        "Apellido: " + data.familyName,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -69,8 +75,10 @@ class PartesuperiorPersona extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child:
-                          Text("Cumpleaños: " + verificarCumple(data.birthday)),
+                      child: Text(
+                        "Cumpleaños: " + verificarCumple(data.birthday),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -78,7 +86,10 @@ class PartesuperiorPersona extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text(verificarAbout(data.about)),
+                      child: Text(
+                        verificarAbout(data.about),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),
