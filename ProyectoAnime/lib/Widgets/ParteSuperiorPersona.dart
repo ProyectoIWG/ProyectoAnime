@@ -24,7 +24,7 @@ class PartesuperiorPersona extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
-                      color: Colors.black,
+                      color: Colors.grey,
                       width: 2.5,
                     ),
                     borderRadius: BorderRadius.circular(10)),
@@ -41,9 +41,9 @@ class PartesuperiorPersona extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.yellow,
+                    color: Colors.grey,
                     border: Border.all(
-                      color: Colors.lightBlue,
+                      color: Colors.grey,
                       width: 2.5,
                     ),
                     borderRadius: BorderRadius.circular(10)),

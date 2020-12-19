@@ -20,6 +20,7 @@ class PagPersona extends StatelessWidget {
           InfogeneralPagPersona(malId),
         ],
       ),
+      backgroundColor: Colors.black12,
     );
   }
 }
