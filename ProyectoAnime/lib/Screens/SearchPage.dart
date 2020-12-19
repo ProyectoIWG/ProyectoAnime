@@ -17,6 +17,7 @@ class _SearchButtonState extends State<SearchButton> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white70,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -108,7 +109,7 @@ class _SearchButtonState extends State<SearchButton> {
                 ),
                 filled: true,
                 fillColor: Colors.grey.shade200,
-                hintText: "Busca un anime",
+                hintText: "Se busca con 3 letras o más",
                 icon: Icon(
                   Icons.search,
                   color: Colors.black,
@@ -143,45 +144,63 @@ class _SearchButtonState extends State<SearchButton> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 25),
-            child: MaterialButton(
-              child: Image.asset(
-                'assets/lupa.png',
-                width: 400,
-                height: 400,
-              ),
-              onPressed: () {
-                switch (_tipo) {
-                  case SearchType.anime:
-                    {
-                      Navigator.of(context)
-                          .pushNamed('/AnimangaS', arguments: [result, _tipo]);
-                    }
-                    break;
-                  case SearchType.manga:
-                    {
-                      Navigator.of(context)
-                          .pushNamed('/AnimangaS', arguments: [result, _tipo]);
-                    }
-                    break;
-                  case SearchType.character:
-                    {
-                      Navigator.of(context)
-                          .pushNamed('/CharPerS', arguments: [result, _tipo]);
-                    }
-                    break;
-                  case SearchType.person:
-                    {
-                      Navigator.of(context)
-                          .pushNamed('/CharPerS', arguments: [result, _tipo]);
-                    }
-                    break;
-                }
-              },
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(40),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
+              child: MaterialButton(
+                child: Image.asset(
+                  'assets/lupa.png',
+                  width: 400,
+                  height: 400,
+                ),
+                onPressed: () {
+                  switch (_tipo) {
+                    case SearchType.anime:
+                      {
+                        if (result.length >= 3) {
+                          Navigator.of(context).pushNamed(
+                            '/AnimangaS',
+                            arguments: [result, _tipo],
+                          );
+                        }
+                      }
+                      break;
+                    case SearchType.manga:
+                      {
+                        if (result.length >= 3) {
+                          Navigator.of(context).pushNamed(
+                            '/AnimangaS',
+                            arguments: [result, _tipo],
+                          );
+                        }
+                      }
+                      break;
+                    case SearchType.character:
+                      {
+                        if (result.length >= 3) {
+                          Navigator.of(context).pushNamed(
+                            '/CharPerS',
+                            arguments: [result, _tipo],
+                          );
+                        }
+                      }
+                      break;
+                    case SearchType.person:
+                      {
+                        if (result.length >= 3) {
+                          Navigator.of(context).pushNamed(
+                            '/CharPerS',
+                            arguments: [result, _tipo],
+                          );
+                        }
+                      }
+                      break;
+                  }
+                },
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40),
+                ),
               ),
             ),
           )

@@ -54,11 +54,11 @@ class InfoGeneralManga extends StatelessWidget {
                       child: Text(
                         "Titulo: " +
                             '\n' +
-                            data.title +
+                            verificarTittle(data.title) +
                             '\n' +
-                            data.titleEnglish +
+                            verificarTittle(data.titleEnglish) +
                             '\n' +
-                            data.titleJapanese,
+                            verificarTittle(data.titleJapanese),
                         style: TextStyle(
                           fontSize: 15.0,
                         ),

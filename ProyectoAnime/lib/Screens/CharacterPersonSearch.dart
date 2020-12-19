@@ -16,6 +16,7 @@ class _CharPerSearchState extends State<CharPerSearch> {
     String _strBuscar = _datos[0];
 
     return Scaffold(
+      backgroundColor: Colors.white70,
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Image.asset(
@@ -49,46 +50,61 @@ class _CharPerSearchState extends State<CharPerSearch> {
                 );
               } else {
                 BuiltList<Search> animedata = snapshot.data;
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black87,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  height: 634.05,
-                  child: ListView.builder(
-                    itemCount: animedata.length,
-                    scrollDirection: Axis.vertical,
-                    itemBuilder: (context, position) {
-                      return Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                        child: Card(
-                          margin: EdgeInsets.symmetric(
-                            vertical: 1,
-                            horizontal: 15,
-                          ),
-                          color: Colors.white10,
-                          child: ListTile(
-                            leading:
-                                Image.network(animedata[position].imageUrl),
-                            title: Text(
-                              animedata[position].name,
-                              style: TextStyle(color: Colors.white),
+                int largo = verificarlenght(animedata);
+                return Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.black87,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: ListView.builder(
+                      itemCount: largo,
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, position) {
+                        if (largo == 1) {
+                          return Card(
+                            color: Colors.white10,
+                            child: ListTile(
+                              title: Text(
+                                'No se encontraron resultados',
+                                style: TextStyle(color: Colors.white),
+                              ),
                             ),
-                            onTap: () {
-                              if (_tipo == SearchType.person) {
-                                Navigator.of(context).pushNamed('/PersonPage',
-                                    arguments: animedata[position].malId);
-                              } else {
-                                Navigator.of(context).pushNamed(
-                                    '/CharacterPage',
-                                    arguments: animedata[position].malId);
-                              }
-                            },
-                          ),
-                        ),
-                      );
-                    },
+                          );
+                        } else {
+                          return Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 15),
+                            child: Card(
+                              margin: EdgeInsets.symmetric(
+                                vertical: 1,
+                                horizontal: 15,
+                              ),
+                              color: Colors.white10,
+                              child: ListTile(
+                                leading:
+                                    Image.network(animedata[position].imageUrl),
+                                title: Text(
+                                  animedata[position].name,
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                onTap: () {
+                                  if (_tipo == SearchType.person) {
+                                    Navigator.of(context).pushNamed(
+                                        '/PersonPage',
+                                        arguments: animedata[position].malId);
+                                  } else {
+                                    Navigator.of(context).pushNamed(
+                                        '/CharacterPage',
+                                        arguments: animedata[position].malId);
+                                  }
+                                },
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                    ),
                   ),
                 );
               }

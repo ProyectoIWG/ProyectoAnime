@@ -40,39 +40,41 @@ class AnimeSeason extends StatelessWidget {
               );
             } else {
               Season _season = snapshot.data;
-              return Container(
-                decoration: BoxDecoration(
+              return Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
                     color: Colors.black87,
-                    borderRadius: BorderRadius.circular(10)),
-                height: 634.0554,
-                child: ListView.builder(
-                  itemCount: 70,
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (context, position) {
-                    return Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                      child: Card(
-                        margin: EdgeInsets.symmetric(
-                          vertical: 1,
-                          horizontal: 15,
-                        ),
-                        color: Colors.white10,
-                        child: ListTile(
-                          leading:
-                              Image.network(_season.anime[position].imageUrl),
-                          title: Text(
-                            _season.anime[position].title,
-                            style: TextStyle(color: Colors.white),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: ListView.builder(
+                    itemCount: 70,
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (context, position) {
+                      return Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                        child: Card(
+                          margin: EdgeInsets.symmetric(
+                            vertical: 1,
+                            horizontal: 15,
                           ),
-                          onTap: () {
-                            Navigator.of(context).pushNamed('/AnimePage',
-                                arguments: _season.anime[position].malId);
-                          },
+                          color: Colors.white10,
+                          child: ListTile(
+                            leading:
+                                Image.network(_season.anime[position].imageUrl),
+                            title: Text(
+                              _season.anime[position].title,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            onTap: () {
+                              Navigator.of(context).pushNamed('/AnimePage',
+                                  arguments: _season.anime[position].malId);
+                            },
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               );
             }

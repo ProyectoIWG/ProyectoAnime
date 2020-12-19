@@ -14,7 +14,8 @@ class InfogeneralPagPersona extends StatelessWidget {
           return CircularProgressIndicator();
         } else {
           Person data = snapshot.data;
-          if (data.voiceActingRoles.isNotEmpty) {
+          if (data.voiceActingRoles.isNotEmpty &&
+              data.voiceActingRoles.length >= 2) {
             return Column(
               children: <Widget>[
                 Container(

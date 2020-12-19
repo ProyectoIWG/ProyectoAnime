@@ -13,6 +13,7 @@ class MyHomePageStatus extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white70,
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Image.asset(

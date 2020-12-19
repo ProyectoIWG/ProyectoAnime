@@ -194,3 +194,19 @@ String getSeries(BuiltList<CharacterRole> data) {
   }
   return names;
 }
+
+String verificarTittle(var str) {
+  if (str == null) {
+    return "";
+  } else {
+    return str;
+  }
+}
+
+verificarlenght(BuiltList<Search> str) {
+  if (str.isEmpty) {
+    return 1;
+  } else {
+    return str.length;
+  }
+}
