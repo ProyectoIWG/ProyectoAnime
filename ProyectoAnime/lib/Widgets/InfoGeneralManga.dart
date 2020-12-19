@@ -21,21 +21,24 @@ class InfoGeneralManga extends StatelessWidget {
                   vertical: 25.0,
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.white24,
                     border: Border.all(
                       color: Colors.black,
                       width: 2.5,
-                    )),
+                    ),
+                    borderRadius: BorderRadius.circular(10)
+                    ),
                 height: 45,
                 width: 200,
                 child: Column(
                   children: <Widget>[
                     Align(
-                      alignment: Alignment.bottomCenter,
+                      alignment: Alignment.center,
                       child: Text(
                         "Informacion general: ",
                         style: TextStyle(
                           fontSize: 20.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -47,6 +50,7 @@ class InfoGeneralManga extends StatelessWidget {
                 ),
               ),
               Card(
+                color: Colors.white24,
                 child: Column(
                   children: <Widget>[
                     Align(
@@ -54,13 +58,14 @@ class InfoGeneralManga extends StatelessWidget {
                       child: Text(
                         "Titulo: " +
                             '\n' +
-                            verificarTittle(data.title) +
+                            data.title +
                             '\n' +
-                            verificarTittle(data.titleEnglish) +
+                            data.titleEnglish +
                             '\n' +
-                            verificarTittle(data.titleJapanese),
+                            data.titleJapanese,
                         style: TextStyle(
                           fontSize: 15.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -70,6 +75,7 @@ class InfoGeneralManga extends StatelessWidget {
                         "Tipo: " + data.type,
                         style: TextStyle(
                           fontSize: 15.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -79,6 +85,7 @@ class InfoGeneralManga extends StatelessWidget {
                         "Status: " + data.status,
                         style: TextStyle(
                           fontSize: 15.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -88,6 +95,7 @@ class InfoGeneralManga extends StatelessWidget {
                         "Autores: " + data.authors.first.name,
                         style: TextStyle(
                           fontSize: 15.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),

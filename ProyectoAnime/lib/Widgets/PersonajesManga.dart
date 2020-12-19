@@ -23,19 +23,21 @@ class PersonajesManga extends StatelessWidget {
                     children: <Widget>[
                       Row(
                         children: <Widget>[
-                          Container(
+                          Expanded(
+                            child: Container(
                             margin: EdgeInsets.symmetric(
                               vertical: 25.0,
-                              horizontal: 10.0,
+                              horizontal: 33.0,
                             ),
                             decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.5,
-                                )),
-                            height: 100,
-                            width: 90,
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Colors.grey,
+                                width: 2.5,
+                              ),
+                            ),
+                            height: 70,
+                            width: 70,
                             child: Align(
                               alignment: Alignment.center,
                               child: Image.network(
@@ -45,24 +47,30 @@ class PersonajesManga extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Container(
+                          ),
+                          Expanded(
+                            child: Container(
                             decoration: BoxDecoration(
-                                color: Colors.yellow,
+                                color: Colors.white24,
                                 border: Border.all(
-                                  color: Colors.lightBlue,
+                                  color: Colors.black,
                                   width: 2.5,
-                                )),
-                            height: 40,
-                            width: 135,
+                                ),
+                                borderRadius: BorderRadius.circular(10)
+                                ),
+                            height: 70,
+                            width: 120,
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
                                 data[i].name,
                                 style: TextStyle(
                                   fontSize: 12.0,
+                                  color: Colors.white,
                                 ),
                               ),
                             ),
+                          ),
                           ),
                         ],
                       ),

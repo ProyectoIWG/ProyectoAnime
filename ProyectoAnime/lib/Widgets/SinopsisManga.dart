@@ -17,6 +17,7 @@ class SinopsisManga extends StatelessWidget {
           return Column(
             children: <Widget>[
               Card(
+                 color: Colors.white24,
                 margin: EdgeInsets.symmetric(
                   vertical: 25.0,
                   horizontal: 100.0,
@@ -28,13 +29,14 @@ class SinopsisManga extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 20.0,
                       fontFamily: 'Dosis',
-                      color: Colors.pink,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
               ),
               Card(
+                 color: Colors.white24,
                 margin: EdgeInsets.symmetric(
                   vertical: 5.0,
                   horizontal: 25.0,
@@ -45,7 +47,7 @@ class SinopsisManga extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15.0,
                       fontFamily: 'Dosis',
-                      color: Colors.pink,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
