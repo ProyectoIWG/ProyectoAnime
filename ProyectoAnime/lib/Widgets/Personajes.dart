@@ -22,71 +22,85 @@ class Personajes extends StatelessWidget {
                     children: <Widget>[
                       Row(
                         children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.symmetric(
-                              vertical: 25.0,
-                              horizontal: 10.0,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Colors.black,
-                                width: 2.5,
+                          Expanded(
+                            child: Container(
+                              margin: EdgeInsets.symmetric(
+                                vertical: 25.0,
+                                horizontal: 33.0,
                               ),
-                            ),
-                            height: 100,
-                            width: 90,
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Image.network(
-                                verificarImagen1(data.characters[i].imageUrl),
-                                width: 90,
-                                height: 125,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Colors.yellow,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
                                 border: Border.all(
-                                  color: Colors.lightBlue,
+                                  color: Colors.grey,
                                   width: 2.5,
-                                )),
-                            height: 40,
-                            width: 165,
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Peronaje: " +
-                                    data.characters[i].name +
-                                    '\nActor: ' +
-                                    verificarNombre(
-                                        data.characters[i].voiceActors),
-                                style: TextStyle(
-                                  fontSize: 12.0,
+                                ),
+                              ),
+                              height: 70,
+                              width: 70,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Image.network(
+                                  verificarImagen1(data.characters[i].imageUrl),
+                                  width: 90,
+                                  height: 70,
                                 ),
                               ),
                             ),
                           ),
-                          Container(
-                            margin: EdgeInsets.symmetric(
-                              horizontal: 10.0,
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white24,
+                                  border: Border.all(
+                                    color: Colors.black,
+                                    width: 2.5,
+                                  ),
+                                  borderRadius: BorderRadius.circular(10)),
+                              height: 70,
+                              width: 120,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Peronaje: " +
+                                      data.characters[i].name +
+                                      '\nActor: ' +
+                                      verificarNombre(
+                                          data.characters[i].voiceActors),
+                                  style: TextStyle(
+                                    fontSize: 12.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
                             ),
-                            decoration: BoxDecoration(
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: EdgeInsets.symmetric(
+                                horizontal: 33.0,
+                              ),
+                              decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
-                                  color: Colors.black,
+                                  color: Colors.grey,
                                   width: 2.5,
-                                )),
-                            height: 100,
-                            width: 90,
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Image.network(
-                                verificarImagen2(
-                                    data.characters[i].voiceActors),
-                                width: 90,
-                                height: 125,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              height: 70,
+                              width: 30,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Image(
+                                  image: (verificarImagen2(
+                                              data.characters[i].voiceActors) ==
+                                          null)
+                                      ? AssetImage('assets/Fondo_Blanco.png')
+                                      : NetworkImage(
+                                          verificarImagen2(
+                                              data.characters[i].voiceActors),
+                                        ),
+                                ),
                               ),
                             ),
                           ),

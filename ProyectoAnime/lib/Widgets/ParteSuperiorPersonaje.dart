@@ -22,12 +22,12 @@ class ParteSuperiorPersonaje extends StatelessWidget {
                   horizontal: 10.0,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 2.5,
-                  ),
-                ),
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.grey[800],
+                      width: 2.5,
+                    ),
+                    borderRadius: BorderRadius.circular(10)),
                 height: 120,
                 width: 90,
                 child: Align(
@@ -41,19 +41,22 @@ class ParteSuperiorPersonaje extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.green[100],
-                  border: Border.all(
-                    color: Colors.lightBlue,
-                    width: 2.5,
-                  ),
-                ),
+                    color: Colors.grey[800],
+                    border: Border.all(
+                      color: Colors.grey[800],
+                      width: 2.5,
+                    ),
+                    borderRadius: BorderRadius.circular(10)),
                 height: 120,
                 width: 250,
                 child: ListView(
                   children: <Widget>[
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text("Nombre: " + data.name),
+                      child: Text(
+                        "Nombre: " + data.name,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -61,13 +64,17 @@ class ParteSuperiorPersonaje extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child:
-                          Text("Animeography: " + getSeries(data.animeography)),
+                      child: Text(
+                        "Animeography: " + getSeries(data.animeography),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child:
-                          Text("Mangaography: " + getSeries(data.mangaography)),
+                      child: Text(
+                        "Mangaography: " + getSeries(data.mangaography),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),

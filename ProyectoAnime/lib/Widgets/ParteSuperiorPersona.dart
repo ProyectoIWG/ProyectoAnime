@@ -22,11 +22,13 @@ class PartesuperiorPersona extends StatelessWidget {
                   horizontal: 10.0,
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Colors.black,
-                      width: 2.5,
-                    )),
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Colors.grey[800],
+                    width: 2.5,
+                  ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 height: 120,
                 width: 90,
                 child: Align(
@@ -35,23 +37,29 @@ class PartesuperiorPersona extends StatelessWidget {
                     data.imageUrl,
                     width: 90,
                     height: 125,
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    border: Border.all(
-                      color: Colors.lightBlue,
-                      width: 2.5,
-                    )),
+                  color: Colors.grey[800],
+                  border: Border.all(
+                    color: Colors.grey[800],
+                    width: 2.5,
+                  ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 height: 120,
                 width: 250,
                 child: ListView(
                   children: <Widget>[
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text("Nombre de pila: " + data.name),
+                      child: Text(
+                        "Nombre de pila: " + data.name,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -59,7 +67,10 @@ class PartesuperiorPersona extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text("Apellido: " + data.familyName),
+                      child: Text(
+                        "Apellido: " + data.familyName,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -67,8 +78,10 @@ class PartesuperiorPersona extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child:
-                          Text("Cumpleaños: " + verificarCumple(data.birthday)),
+                      child: Text(
+                        "Cumpleaños: " + verificarCumple(data.birthday),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -76,7 +89,10 @@ class PartesuperiorPersona extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: Text(verificarAbout(data.about)),
+                      child: Text(
+                        verificarAbout(data.about),
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),

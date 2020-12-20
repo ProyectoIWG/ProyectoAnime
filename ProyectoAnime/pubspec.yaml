@@ -57,6 +57,13 @@ flutter:
     - assets/iconologo.png
     - assets/Saber.png
     - assets/Kaguya.jpg
+    - assets/lupa.png
+    - assets/FondoPagAnime2.jpeg
+    - assets/FondoPagManga.jpeg
+    - assets/FondoPersona.png
+    - assets/FondoPersonaje.jpeg
+    - assets/Search_Image.jpg
+    - assets/Fondo_Blanco.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

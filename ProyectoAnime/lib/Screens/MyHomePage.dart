@@ -13,6 +13,7 @@ class MyHomePageStatus extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white70,
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Image.asset(
@@ -29,10 +30,9 @@ class MyHomePageStatus extends State<MyHomePage> {
         ],
       ),
       drawer: MenuLateral(),
-      body: Column(
-        children: <Widget>[
-          AnimeSeason(fecha: _fecha),
-        ],
+      body: Container(
+        alignment: Alignment.center,
+        child: AnimeSeason(fecha: _fecha),
       ),
     );
   }
