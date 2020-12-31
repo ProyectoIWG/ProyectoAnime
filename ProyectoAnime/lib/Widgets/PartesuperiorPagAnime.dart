@@ -224,7 +224,7 @@ class PartesuperiorPagAnime extends StatelessWidget {
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
-                                "Nota: $nota",
+                                "Nota: " + verificarNota(nota),
                                 style: TextStyle(
                                   fontSize: 15.0,
                                   color: Colors.white,

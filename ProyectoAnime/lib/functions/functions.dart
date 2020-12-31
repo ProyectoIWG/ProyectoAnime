@@ -216,3 +216,11 @@ verificarlenght(BuiltList<Search> str) {
     return str.length;
   }
 }
+
+verificarNota(String str) {
+  if (str == 'null') {
+    return 'N/A';
+  } else {
+    return str;
+  }
+}

@@ -67,38 +67,6 @@ class _SearchButtonState extends State<SearchButton> {
                     ),
                   ),
                 ),
-                /*
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {
-                    switch (_tipo) {
-                      case SearchType.anime:
-                        {
-                          Navigator.of(context).pushNamed('/AnimangaS',
-                              arguments: [result, _tipo]);
-                        }
-                        break;
-                      case SearchType.manga:
-                        {
-                          Navigator.of(context).pushNamed('/AnimangaS',
-                              arguments: [result, _tipo]);
-                        }
-                        break;
-                      case SearchType.character:
-                        {
-                          Navigator.of(context)
-                              .pushNamed('/CharPerS', arguments: [result, _tipo]);
-                        }
-                        break;
-                      case SearchType.person:
-                        {
-                          Navigator.of(context)
-                              .pushNamed('/CharPerS', arguments: [result, _tipo]);
-                        }
-                        break;
-                    }
-                  },
-                ),*/
               ],
             ),
             Container(
@@ -151,6 +119,7 @@ class _SearchButtonState extends State<SearchButton> {
               ),
             ),
             Expanded(
+              // boton para buscar dependiendo de lo que se quiera
               child: Padding(
                 padding: const EdgeInsets.only(top: 15, bottom: 15),
                 child: MaterialButton(
@@ -216,3 +185,36 @@ class _SearchButtonState extends State<SearchButton> {
     );
   }
 }
+
+/*
+                IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    switch (_tipo) {
+                      case SearchType.anime:
+                        {
+                          Navigator.of(context).pushNamed('/AnimangaS',
+                              arguments: [result, _tipo]);
+                        }
+                        break;
+                      case SearchType.manga:
+                        {
+                          Navigator.of(context).pushNamed('/AnimangaS',
+                              arguments: [result, _tipo]);
+                        }
+                        break;
+                      case SearchType.character:
+                        {
+                          Navigator.of(context)
+                              .pushNamed('/CharPerS', arguments: [result, _tipo]);
+                        }
+                        break;
+                      case SearchType.person:
+                        {
+                          Navigator.of(context)
+                              .pushNamed('/CharPerS', arguments: [result, _tipo]);
+                        }
+                        break;
+                    }
+                  },
+                ),*/
