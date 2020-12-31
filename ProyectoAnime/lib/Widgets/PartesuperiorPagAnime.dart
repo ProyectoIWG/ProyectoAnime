@@ -263,23 +263,24 @@ class PartesuperiorPagAnime extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  animeinfo.genres[0].name,
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  animeinfo.genres[1].name,
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.white,
+                              Expanded(
+                                child: Container(
+                                  child: ListView(
+                                    children: [
+                                      for (int i = 0;
+                                          i < animeinfo.genres.length;
+                                          i++)
+                                        Align(
+                                          alignment: Alignment.center,
+                                          child: Text(
+                                            animeinfo.genres[i].name,
+                                            style: TextStyle(
+                                              fontSize: 15.0,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                    ],
                                   ),
                                 ),
                               ),
